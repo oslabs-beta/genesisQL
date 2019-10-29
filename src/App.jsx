@@ -12,7 +12,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import '../public/style.css';
+import './style.css';
 
 // component imports
 import Search from './components/search';
