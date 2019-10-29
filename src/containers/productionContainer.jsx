@@ -21,6 +21,7 @@ class ProductionContainer extends Component {
     return (
       <div id="productionContainer">
         <p>'ProductionContainer Component'</p>
+        {/* SchemaBuilderContainer is a versaitle container for rendering several componenets. Could be updated to contain CodeOutput and more */}
         <SchemaBuilderContainer />
         <CodeOutput />
       </div>

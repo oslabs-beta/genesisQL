@@ -4,7 +4,7 @@
  * @module SchemaBuilderContainer
  * @author Tom Herrmann and Adam Goren
  * @date 10/29/2019
- * @description Displays the field required to build GraphQL schema
+ * @description Displays the fields required to build GraphQL schema ~~~versitile container for rendering several componenets. Currently holds DataViewa dn Form, but could be updated to contain CodeOutput and more~~~~
  *
  * ***********************************
  */
