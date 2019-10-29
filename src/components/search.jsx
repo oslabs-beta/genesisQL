@@ -1,3 +1,14 @@
+/**
+ * ***********************************
+ *
+ * @module Search
+ * @author Tom Herrmann and Adam Goren
+ * @date 10/29/2019
+ * @description Search bar to perform GET requests on various data collections
+ *
+ * ***********************************
+ */
+
 import React from 'react';
 import { Component } from 'react';
 

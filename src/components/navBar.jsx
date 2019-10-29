@@ -1,3 +1,14 @@
+/**
+ * ***********************************
+ *
+ * @module NavBar
+ * @author Tom Herrmann and Adam Goren
+ * @date 10/29/2019
+ * @description Select what to display in the production container by clicking a series of buttons
+ *
+ * ***********************************
+ */
+
 import React from 'react';
 import { Component } from 'react';
 
