@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const fetch = require('node-fetch');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 // create our server
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 // handle incoming objects
 app.use(express.json());
+app.use(bodyParser());
 app.use(cookieParser());
 
 /* Handles getting data and send it back to clients */
