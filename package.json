@@ -4,11 +4,11 @@
   "description": "Generates GraphQL schema WITH EASE",
   "main": "index.js",
   "scripts": {
+    "serve": "nodemon server/server.js",
+    "dev": "npm run serve & webpack-dev-server --mode development --open",
     "start": "node server/server.js",
-    "start:dev": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.8",
+    "node-fetch": "^2.6.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15"
