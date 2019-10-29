@@ -9,13 +9,12 @@
  * ***********************************
  */
 
-import React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 class Search extends Component {
   render() {
     return (
-      <form /*action="/test" method="GET"*/>
+      <form id="search">
         <label>
           <input type="text" placeholder="Paste here, motherfucker" />
         </label>

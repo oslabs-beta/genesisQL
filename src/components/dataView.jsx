@@ -9,12 +9,15 @@
  * ***********************************
  */
 
-import React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 class DataView extends Component {
   render() {
-    return <p>'DataView Component'</p>;
+    return (
+      <div id="dataView">
+        <p>'DataView Component'</p>
+      </div>
+    );
   }
 }
 
