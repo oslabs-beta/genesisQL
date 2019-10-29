@@ -43,6 +43,7 @@
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.8",
     "node-fetch": "^2.6.0",
+    "pg": "^7.12.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15"
