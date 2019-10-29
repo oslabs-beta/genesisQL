@@ -9,12 +9,16 @@
  * ***********************************
  */
 
-import React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
+
 
 class CodeOutput extends Component {
   render() {
-    return <p>'CodeOutput Component'</p>;
+    return (
+      <div id="codeOutput">
+        <p>'CodeOutput Component'</p>
+      </div>
+    );
   }
 }
 

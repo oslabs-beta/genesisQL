@@ -1,4 +1,4 @@
-/* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
+  /* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
 html, body, #root {
   display: flex;
   flex-direction: column;
@@ -46,4 +46,22 @@ html, body, #root {
   display: flex;
   flex-direction: row;
   border: 5px solid orange;
+}
+
+#codeOutput {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid brown;
+}
+
+#dataView {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid blue;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid whitesmoke;
 }
