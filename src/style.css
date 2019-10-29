@@ -1,5 +1,67 @@
+  /* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
+html, body, #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  background-color: teal;
+}
+
 .App {
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95%;
+  width: 95%;
+  margin: 1%;
+  border: 5px solid green;
+}
+
+#search {
+  /* align */
+}
+
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid yellow;
+}
+
+#navBar {
+  display: flex;
+  flex-direction: row;
+  border: 5px solid red;
+  border-style: solid;
+}
+
+#productionContainer {
+  display: flex;
+  flex-direction: row;
+  border: 5px solid purple;
+}
+
+#schemaBuilderContainer {
+  display: flex;
+  flex-direction: row;
+  border: 5px solid orange;
+}
+
+#codeOutput {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid brown;
+}
+
+#dataView {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid blue;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid whitesmoke;
 }

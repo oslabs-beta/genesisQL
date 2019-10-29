@@ -1,10 +1,14 @@
+// require in libraries
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
 const path = require('path');
 const fetch = require('node-fetch');
 const cookieParser = require('cookie-parser');
 
+// create our server
+const app = express();
+const port = process.env.PORT || 3000;
+
+// handle incoming objects
 app.use(express.json());
 app.use(cookieParser());
 
@@ -12,8 +16,8 @@ app.use(cookieParser());
 app.get('/test', (req, res) => {
   const { url } = req.body;
   fetch(url)
-    .then(data => data.json())
-    .then(e => res.send(e));
+    .then((data) => data.json())
+    .then((e) => res.send(e));
 });
 
 // TO GENERATE CODE app.post('/code', )
@@ -27,4 +31,4 @@ app.use('/', (req, res, next) => {
 });
 
 // sets development port
-app.listen(port, () => console.log('listening on port ' + port));
+app.listen(port, () => console.log(`listening on port ${  port}`));
