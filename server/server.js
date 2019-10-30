@@ -11,11 +11,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // handle incoming objects
-app.use(express.json());
 app.use(bodyParser());
 app.use(cookieParser());
+// handles post data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Handles getting data and send it back to clients */
+
 app.post('/search', searchController.fetch, searchController.post, (req, res) => {
   console.log('Completed Search');
 });
@@ -31,4 +33,4 @@ app.use('/', (req, res, next) => {
 });
 
 // sets development port
-app.listen(port, () => console.log(`listening on port ${  port}`));
+app.listen(port, () => console.log(`listening on port ${port}`));
