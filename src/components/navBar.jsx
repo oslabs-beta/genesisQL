@@ -12,14 +12,21 @@
 import React, { Component } from 'react';
 
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const schemaBuilderTab = 'schemaBuilderTab';
+    const codeOutputTab = 'codeOutputTab';
+
     return (
       <div id="navBar">
         <div id="tabsContainer">
-          <button id="schemaBuilderTab" className="tab">
+          <button id={schemaBuilderTab} className="tab" onClick={() => { this.props.changeCurrentTab(schemaBuilderTab) }}>
             Schema Builder
           </button>
-          <button id="codeOutputTab" className="tab">
+          <button id={codeOutputTab} className="tab" onClick={() => { this.props.changeCurrentTab(codeOutputTab) }}>
             Code Output
           </button>
         </div>
