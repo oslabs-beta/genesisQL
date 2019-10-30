@@ -9,10 +9,8 @@
  * ***********************************
  */
 
-import React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import fetch from 'node-fetch';
 import './style.css';
 
 // component imports
@@ -40,7 +38,7 @@ class App extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ searchInput: data })
+      body: JSON.stringify({ url: data })
     })
     // console.log('AFTER FETCH REQUEST')
   }
