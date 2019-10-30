@@ -4,6 +4,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const searchController = require('./utils/searchController.js');
 
 // create our server
 const app = express();
@@ -16,15 +17,9 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Handles getting data and send it back to clients */
-app.get('/test', (req, res) => {
-  const { url } = req.body;
-  fetch(url)
-    .then(data => data.json())
-    .then(e => res.send(e));
-});
 
-app.post('/search', (req, res) => {
-  console.log('/SEARCH POST REQUEST IN SERVER \n req.body ===', req.body);
+app.post('/search', searchController.fetch, searchController.post, (req, res) => {
+  console.log('Completed Search');
 });
 
 // TO GENERATE CODE app.post('/code', )
