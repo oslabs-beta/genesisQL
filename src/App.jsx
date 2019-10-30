@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     // defines App state
     this.state = {
-      searched: false
+      // place state items here
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
