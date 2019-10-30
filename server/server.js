@@ -10,16 +10,21 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // handle incoming objects
-app.use(express.json());
 app.use(bodyParser());
 app.use(cookieParser());
+// handles post data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Handles getting data and send it back to clients */
 app.get('/test', (req, res) => {
   const { url } = req.body;
   fetch(url)
-    .then((data) => data.json())
-    .then((e) => res.send(e));
+    .then(data => data.json())
+    .then(e => res.send(e));
+});
+
+app.post('/search', (req, res) => {
+  console.log('/SEARCH POST REQUEST IN SERVER \n req.body ===', req.body);
 });
 
 // TO GENERATE CODE app.post('/code', )
@@ -33,4 +38,4 @@ app.use('/', (req, res, next) => {
 });
 
 // sets development port
-app.listen(port, () => console.log(`listening on port ${  port}`));
+app.listen(port, () => console.log(`listening on port ${port}`));
