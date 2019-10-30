@@ -19,7 +19,7 @@ class SchemaBuilderContainer extends Component {
   render() {
     return (
       <div id="schemaBuilderContainer">
-        <p>'Schema Builder Container'</p>
+        {/* <p>'Schema Builder Container'</p> */}
         <DataView />
         <Form />
       </div>

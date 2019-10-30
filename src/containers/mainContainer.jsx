@@ -50,7 +50,7 @@ class MainContainer extends Component {
   render() {
     return (
       <div id="mainContainer">
-        <p>'MainContainer Component'</p>
+        {/* <p>'MainContainer Component'</p> */}
         <NavBar changeCurrentTab={this.changeCurrentTab} currentTab={this.state.currentTab} />
         <ProductionContainer currentTab={this.state.currentTab} />
       </div>

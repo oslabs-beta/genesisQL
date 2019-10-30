@@ -6,7 +6,7 @@ html, body, #root {
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  background-color: teal;
+  background-color: #7fc4fd;
 }
 
 .App {
@@ -20,31 +20,53 @@ html, body, #root {
 }
 
 #search {
-  /* align */
+  margin: 1.5%;
+  width: 95%;
+}
+
+#searchInput {
+  width: 100%;
+  height: 55%;
 }
 
 #mainContainer {
   display: flex;
   flex-direction: column;
   border: 5px solid yellow;
+  width: 95%;
+  height: 70%;
 }
 
 #navBar {
   display: flex;
   flex-direction: row;
+  height: 7%;
   border: 5px solid red;
   border-style: solid;
+}
+
+#tabsContainer {
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+}
+
+.tab {
+  height: -webkit-fill-available;
+  width: 50%;
 }
 
 #productionContainer {
   display: flex;
   flex-direction: row;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
   border: 5px solid purple;
 }
 
 #schemaBuilderContainer {
   display: flex;
   flex-direction: row;
+  width: -webkit-fill-available;
   border: 5px solid orange;
 }
 
@@ -57,11 +79,13 @@ html, body, #root {
 #dataView {
   display: flex;
   flex-direction: column;
+  width: 60%;
   border: 5px solid blue;
 }
 
 #form {
   display: flex;
   flex-direction: column;
+  width: 40%;
   border: 5px solid whitesmoke;
 }

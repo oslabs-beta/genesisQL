@@ -20,7 +20,7 @@ class ProductionContainer extends Component {
 
     return (
       <div id="productionContainer">
-        <p>'ProductionContainer Component'</p>
+        {/* <p>'ProductionContainer Component'</p> */}
         {this.props.currentTab}
       </div>
     );
