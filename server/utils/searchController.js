@@ -2,6 +2,8 @@ const pgClient = require('../../database/pgClient.js');
 const queryString = require('../../database/queryString.js');
 const fetch  = require('node-fetch');
 const searchController = {};
+// searchController is the express middleware that handles the req
+// from the searchbar
 
 pgClient.query(queryString.createSearchTable, (err, result) => {
     if(err) console.error('FIRST error', err);
@@ -25,6 +27,8 @@ searchController.fetch = (req, res, next) => {
       })
       .catch(err => next(err));
   }
+// Unit test for fetch func
+// TODO: move to test file
 // let req = {}
 // req.body = {url: 'https://swapi.co/api/people/1/'}
 // let res = {};
@@ -46,6 +50,4 @@ searchController.post = (req, res, next) => {
 }
 
 // searchController.post(req, res, () => {});
-
-
 module.exports = searchController;
