@@ -38,6 +38,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",

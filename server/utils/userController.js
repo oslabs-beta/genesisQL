@@ -1,4 +1,5 @@
-const pgClient = require('./pgClient.js');
+const pgClient = require('../../database/pgClient.js');
+// import queryString from '../../database/queryString.js';
 
 function createNewUser (req, res, next) {
     const { username, password } = req.body;
@@ -11,13 +12,13 @@ function createNewUser (req, res, next) {
     })
 }
 
-// let req = {};
-// req.body = {
-//     username: 'bob',
-//     password: 'frank'
-// }
+let req = {};
+req.body = {
+    username: 'bob',
+    password: 'frank'
+}
 
-// createNewUser(req, undefined ,() => {})
+createNewUser(req, undefined ,() => {})
 
 function checkPassword (req, res, next){
     const { username, password } = req.body;
@@ -68,11 +69,11 @@ function deleteUser (req, res, next) {
         console.log('deleted')
     })
 }
-let req = {};
-req.body = {
-    username: 'bob',
-    password: 'frank'
-}
+// let req = {};
+// req.body = {
+//     username: 'bob',
+//     password: 'frank'
+// }
 
-deleteUser(req, undefined ,() => {})
+// deleteUser(req, undefined ,() => {})
 
