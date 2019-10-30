@@ -73,6 +73,7 @@ html, body, #root {
 #codeOutput {
   display: flex;
   flex-direction: column;
+  width: -webkit-fill-available;
   border: 5px solid brown;
 }
 
