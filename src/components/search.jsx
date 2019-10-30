@@ -18,8 +18,6 @@ class Search extends Component {
 
   render() {
     return (
-      // JUST EDITED THIS, ADAM - LOVE TOM
-      // CHANGED
       <form
         id="search"
       //   action="javascript:() => {
