@@ -47,11 +47,13 @@ class App extends Component {
   }
 
   render() {
+
+    console.log('DVC IN APP', this.state.dataViewContent)
     return (
       <div className="App">
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
-        <MainContainer dataViewContent={this.dataViewContent} />
+        <MainContainer dataViewContent={this.state.dataViewContent} />
       </div>
     );
   }

@@ -17,11 +17,11 @@ class DataView extends Component {
   }
 
   render() {
-    console.log('IN DATA VIEW CONTENT', this.props.DataViewContent)
+    console.log('IN DATA VIEW CONTENT', this.props.dataViewContent)
     return (
       <div id="dataView">
         <p>'DataView Component'</p>
-        {this.props.DataViewContent}
+        {JSON.stringify(this.props.dataViewContent)}
       </div>
     );
   }

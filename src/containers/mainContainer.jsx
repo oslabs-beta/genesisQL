@@ -48,11 +48,13 @@ class MainContainer extends Component {
   }
 
   render() {
+    console.log('DVC IN MC', this.props.dataViewContent)
+
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
         <NavBar changeCurrentTab={this.changeCurrentTab} currentTab={this.state.currentTab} />
-        <ProductionContainer dataViewContent={this.props.dataViewContent} currentTab={this.state.currentTab} />
+        <ProductionContainer currentTab={this.state.currentTab} />
       </div>
     );
   }
