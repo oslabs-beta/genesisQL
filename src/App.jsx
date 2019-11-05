@@ -12,7 +12,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import './style.css';
-import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 
 // component imports
@@ -53,9 +52,6 @@ class App extends Component {
     return (
       <div className="App">
         <Icon>star</Icon>
-        <Button variant="contained" color="primary">
-        Hello World
-        </Button>
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
         <MainContainer dataViewContent={this.state.dataViewContent} />

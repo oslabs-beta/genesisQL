@@ -21,7 +21,11 @@ class DataView extends Component {
     return (
       <div id="dataView">
         <p className="sbTitle">Data View</p>
-        {JSON.stringify(this.props.dataViewContent)}
+        <p className="dataObj">
+          {' '}
+          {JSON.stringify(this.props.dataViewContent, null, 2)}
+          {' '}
+        </p>
       </div>
     );
   }

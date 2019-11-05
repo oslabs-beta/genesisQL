@@ -10,6 +10,16 @@
  */
 
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+
+import { createMuiTheme } from '@material-ui/core/styles';
+import blue from '@material-ui/core/colors/blue';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+  },
+});
 
 class NavBar extends Component {
   constructor(props) {
@@ -23,12 +33,12 @@ class NavBar extends Component {
     return (
       <div id="navBar">
         <div id="tabsContainer">
-          <button id={schemaBuilderTab} className="tab" onClick={() => { this.props.changeCurrentTab(schemaBuilderTab) }}>
+          <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => { this.props.changeCurrentTab(schemaBuilderTab); }}>
             Schema Builder
-          </button>
-          <button id={codeOutputTab} className="tab" onClick={() => { this.props.changeCurrentTab(codeOutputTab) }}>
+          </Button>
+          <Button variant="contained" color="primary" id={codeOutputTab} className="tab" onClick={() => { this.props.changeCurrentTab(codeOutputTab); }}>
             Code Output
-          </button>
+          </Button>
         </div>
       </div>
     );
