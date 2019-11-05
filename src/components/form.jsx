@@ -17,22 +17,23 @@ class Form extends Component {
       <div id="form">
         {/* https://reactjs.org/docs/forms.html */}
         <p className="sbTitle">Field Editor</p>
-        <form>
-          <label>
+        <label>
+            Table:
+          <input className="tableName" type="text" name="tableName" />
+        </label>
+        <label>
             Field Name:
-            <input className="inputFE" type="text" name="fieldName" />
-          </label>
-          <label>
+          <input className="fieldName" type="text" name="fieldName" />
+        </label>
+        <label>
             Field Type:
-            <input className="inputFE" type="text" name="fieldType" />
-          </label>
-          <label>
+          <input className="fieldType" type="text" name="fieldType" />
+        </label>
+        <label>
             Required:
-            <input type="checkbox" name="nonNullable" />
-          </label>
-          <input type="submit" value="Submit" />
-
-        </form>
+          <input type="checkbox" name="nonNullable" />
+        </label>
+        <button type="submit" value="Submit" onClick={this.props.handleFormSubmitButton} />
       </div>
     );
   }
