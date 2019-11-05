@@ -6,7 +6,7 @@ html, body, #root {
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  background-color: #7fc4fd;
+  font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
 }
 
 .App {
@@ -17,6 +17,7 @@ html, body, #root {
   width: 95%;
   margin: 1%;
   border: 5px solid green;
+  background-color: #7fc4fd;
 }
 
 #search {
@@ -75,6 +76,7 @@ html, body, #root {
   flex-direction: column;
   width: -webkit-fill-available;
   border: 5px solid brown;
+  background-color: white;
 }
 
 #dataView {
@@ -82,11 +84,32 @@ html, body, #root {
   flex-direction: column;
   width: 60%;
   border: 5px solid blue;
+  background-color: white;
 }
 
 #form {
   display: flex;
   flex-direction: column;
   width: 40%;
-  border: 5px solid whitesmoke;
+  background-color: white;
+  border: 5px solid teal;
+}
+
+/* header: https://www.w3schools.com/howto/howto_css_style_header.asp */
+.sbTitle {
+  margin: 0px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid black;
+  padding: 8px;
+  text-align: center;
+  background-color: #1abc9c;
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.inputFE {
+  width: 70%;
+  margin-left: 7px;
+  margin-right: 7px;
 }
