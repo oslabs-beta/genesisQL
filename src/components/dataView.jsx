@@ -15,7 +15,7 @@ class DataView extends Component {
   render() {
     return (
       <div id="dataView">
-        <p>'DataView Component'</p>
+        <p className="sbTitle">Data View</p>
       </div>
     );
   }

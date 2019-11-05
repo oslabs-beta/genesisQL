@@ -15,7 +15,24 @@ class Form extends Component {
   render() {
     return (
       <div id="form">
-        <p>'Form Component'</p>
+        {/* https://reactjs.org/docs/forms.html */}
+        <p className="sbTitle">Field Editor</p>
+        <form>
+          <label>
+            Field Name:
+            <input className="inputFE" type="text" name="fieldName" />
+          </label>
+          <label>
+            Field Type:
+            <input className="inputFE" type="text" name="fieldType" />
+          </label>
+          <label>
+            Required:
+            <input type="checkbox" name="nonNullable" />
+          </label>
+          <input type="submit" value="Submit" />
+
+        </form>
       </div>
     );
   }
