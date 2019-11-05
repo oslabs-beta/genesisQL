@@ -12,6 +12,8 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import './style.css';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 // component imports
 import Search from './components/search';
@@ -35,17 +37,21 @@ class App extends Component {
     fetch('/search', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ url: data })
-    })
+      body: JSON.stringify({ url: data }),
+    });
     // console.log('AFTER FETCH REQUEST')
   }
 
   render() {
     return (
       <div className="App">
+        <Icon>star</Icon>
+        <Button variant="contained" color="primary">
+        Hello World
+        </Button>
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
         <MainContainer />
