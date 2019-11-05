@@ -27,10 +27,15 @@ class Search extends Component {
         // }"
         >
           <label>
-            <input id="searchInput" type="text" placeholder="Paste here, motherfucker" onSubmit={() => {
+            <input
+id="searchInput"
+type="text"
+placeholder="Paste here, motherfucker"
+onSubmit={() => {
               console.log('INSIDE SEARCH ONCLICK FUNC');
               this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-            }} />
+            }}
+            />
           </label>
           {/* <button
           id="searchButton"
