@@ -75,4 +75,4 @@ function createObjType(table){
     // console.log(createObjType(table));
 
 
-// module.exports = createSchema;
+module.exports = createSchema;

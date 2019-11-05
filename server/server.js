@@ -5,6 +5,7 @@ const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const searchController = require('./utils/searchController.js');
+const schemaGen = require('./utils/create_templates/schema.js');
 
 // create our server
 const app = express();
@@ -13,6 +14,7 @@ const port = process.env.PORT || 3000;
 // handle incoming objects
 app.use(bodyParser());
 app.use(cookieParser());
+app.use(express.json());
 // handles post data
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -25,6 +27,11 @@ app.post('/search', searchController.fetch, /*searchController.post,*/(req, res)
 });
 
 // TO GENERATE CODE app.post('/code', )
+app.post('/code', (req, res) => {
+  // const { tables } = req.body;
+  console.log(req.body);
+  res.send(schemaGen(tables));
+})
 
 // serves PRODUCTION bundle
 app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
