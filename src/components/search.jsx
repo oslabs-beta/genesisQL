@@ -18,16 +18,36 @@ class Search extends Component {
 
   render() {
     return (
-      <form
-        id="search"
-      //   action="javascript:() => {
-      //   console.log('INSIDE SEARCH ONCLICK FUNC');
-      //   this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-      // }"
-      >
-        <label>
-          <input id="searchInput" type="text" placeholder="Paste here, motherfucker" />
-        </label>
+      <div>
+        <form
+          id="search"
+        //   action="javascript:() => {
+        //   console.log('INSIDE SEARCH ONCLICK FUNC');
+        //   this.props.dataPOSTRequest(document.getElementById('searchInput').value);
+        // }"
+        >
+          <label>
+            <input
+id="searchInput"
+type="text"
+placeholder="Paste here, motherfucker"
+onSubmit={() => {
+              console.log('INSIDE SEARCH ONCLICK FUNC');
+              this.props.dataPOSTRequest(document.getElementById('searchInput').value);
+            }}
+            />
+          </label>
+          {/* <button
+          id="searchButton"
+          onClick={() => {
+            console.log('INSIDE SEARCH ONCLICK FUNC');
+            this.props.dataPOSTRequest(document.getElementById('searchInput').value);
+          }}
+          type="submit"
+        >
+          Search
+        </button> */}
+        </form>
         <button
           id="searchButton"
           onClick={() => {
@@ -38,7 +58,7 @@ class Search extends Component {
         >
           Search
         </button>
-      </form>
+      </div>
     );
   }
 }

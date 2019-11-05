@@ -16,11 +16,17 @@ import DataView from '../components/dataView';
 import Form from '../components/form';
 
 class SchemaBuilderContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    console.log('DVC IN SB', this.props.dataViewContent)
+
     return (
       <div id="schemaBuilderContainer">
-        <p>'Schema Builder Container'</p>
-        <DataView />
+        {/* <p>'Schema Builder Container'</p> */}
+        <DataView dataViewContent={this.props.dataViewContent} />
         <Form />
       </div>
     );
