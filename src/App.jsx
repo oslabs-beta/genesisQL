@@ -25,7 +25,7 @@ class App extends Component {
     super(props);
     // defines App state
     this.state = {
-      dataViewContent: null,
+      dataViewContent: '',
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
@@ -44,7 +44,7 @@ class App extends Component {
       body: JSON.stringify({ url: data }),
     })
       .then((data) => data.json())
-      .then((result) => this.setState(this.state.dataViewContent = result))
+      .then((result) => this.setState({ dataViewContent: JSON.stringify(result) }))
       .catch((err) => (console.log('ERROR', err)));
   }
 
@@ -54,7 +54,7 @@ class App extends Component {
       <div className="App">
         <Icon>star</Icon>
         <Button variant="contained" color="primary">
-        Hello World
+          Hello World
         </Button>
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
