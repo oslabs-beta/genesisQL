@@ -16,6 +16,7 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 
 // component imports
+import { json } from 'body-parser';
 import Search from './components/search';
 import MainContainer from './containers/mainContainer';
 
@@ -24,7 +25,7 @@ class App extends Component {
     super(props);
     // defines App state
     this.state = {
-      // place state items here
+      dataViewContent: null,
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
@@ -37,15 +38,18 @@ class App extends Component {
     fetch('/search', {
       method: 'POST',
       headers: {
-        Accept: 'application/json',
+        // 'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ url: data }),
-    });
-    // console.log('AFTER FETCH REQUEST')
+    })
+      .then((data) => data.json())
+      .then((result) => this.setState(this.state.dataViewContent = result))
+      .catch((err) => (console.log('ERROR', err)));
   }
 
   render() {
+    console.log('DVC IN APP', this.state.dataViewContent);
     return (
       <div className="App">
         <Icon>star</Icon>
@@ -54,7 +58,7 @@ class App extends Component {
         </Button>
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
-        <MainContainer />
+        <MainContainer dataViewContent={this.state.dataViewContent} />
       </div>
     );
   }

@@ -12,10 +12,16 @@
 import React, { Component } from 'react';
 
 class DataView extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    console.log('IN DATA VIEW CONTENT', this.props.dataViewContent);
     return (
       <div id="dataView">
         <p className="sbTitle">Data View</p>
+        {JSON.stringify(this.props.dataViewContent)}
       </div>
     );
   }
