@@ -48,7 +48,7 @@ class MainContainer extends Component {
   }
 
   render() {
-    console.log('DVC IN MC', this.props.dataViewContent)
+    // console.log('DVC IN MC', this.props.dataViewContent)
 
     return (
       <div id="mainContainer">
