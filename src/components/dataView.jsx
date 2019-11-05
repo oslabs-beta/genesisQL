@@ -10,22 +10,30 @@
  */
 
 import React, { Component } from 'react';
+import { display } from '@material-ui/system';
 
 class DataView extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      displayContent: ''
+    }
+  }
+
+  componentDidMount() {
+    // displyContent will leave container empty until dataViewContent is not null
+    if (this.props.dataViewContent) {
+      this.setState({ displayContent: JSON.stringify(this.props.dataViewContent) })
+    }
   }
 
   render() {
-    console.log('IN DATA VIEW CONTENT', this.props.dataViewContent);
+
+    console.log('DISPLAY CONTENT', this.state.displayContent);
     return (
       <div id="dataView">
         <p className="sbTitle">Data View</p>
-        <p className="dataObj">
-          {' '}
-          {JSON.stringify(this.props.dataViewContent, null, 2)}
-          {' '}
-        </p>
+        {this.state.displayContent}
       </div>
     );
   }
