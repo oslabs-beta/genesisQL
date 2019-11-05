@@ -21,7 +21,7 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: <SchemaBuilderContainer />,
+      currentTab: <SchemaBuilderContainer dataViewContent={this.props.dataViewContent} />,
     }
     // methods being passed down
     this.changeCurrentTab = this.changeCurrentTab.bind(this)
@@ -35,7 +35,7 @@ class MainContainer extends Component {
 
     switch (buttonId) {
       case 'schemaBuilderTab':
-        this.setState({ currentTab: <SchemaBuilderContainer /> })
+        this.setState({ currentTab: <SchemaBuilderContainer dataViewContent={this.props.dataViewContent} /> })
         console.log('CHANGING CURRENT TAB TO SCB')
         break;
       case 'codeOutputTab':
@@ -43,7 +43,7 @@ class MainContainer extends Component {
         console.log('CHANGING CURRENT TAB TO CO')
         break;
       default:
-        this.setState({ currentTab: <SchemaBuilderContainer /> })
+        this.setState({ currentTab: <SchemaBuilderContainer dataViewContent={this.props.dataViewContent} /> })
     }
   }
 
@@ -52,7 +52,7 @@ class MainContainer extends Component {
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
         <NavBar changeCurrentTab={this.changeCurrentTab} currentTab={this.state.currentTab} />
-        <ProductionContainer currentTab={this.state.currentTab} />
+        <ProductionContainer dataViewContent={this.props.dataViewContent} currentTab={this.state.currentTab} />
       </div>
     );
   }

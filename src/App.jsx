@@ -16,13 +16,14 @@ import './style.css';
 // component imports
 import Search from './components/search';
 import MainContainer from './containers/mainContainer';
+import { json } from 'body-parser';
 
 class App extends Component {
   constructor(props) {
     super(props);
     // defines App state
     this.state = {
-      // place state items here
+      dataViewContent: null,
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
@@ -35,12 +36,14 @@ class App extends Component {
     fetch('/search', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        // 'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ url: data })
     })
-    // console.log('AFTER FETCH REQUEST')
+      .then(data => data.json())
+      .then(result => this.setState(this.state.dataViewContent = result))
+      .catch(err => (console.log('ERROR', err)))
   }
 
   render() {
@@ -48,7 +51,7 @@ class App extends Component {
       <div className="App">
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
-        <MainContainer />
+        <MainContainer dataViewContent={this.dataViewContent} />
       </div>
     );
   }

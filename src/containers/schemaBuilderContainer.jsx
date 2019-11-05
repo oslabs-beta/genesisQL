@@ -16,6 +16,10 @@ import DataView from '../components/dataView';
 import Form from '../components/form';
 
 class SchemaBuilderContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div id="schemaBuilderContainer">
