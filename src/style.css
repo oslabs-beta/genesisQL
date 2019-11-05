@@ -108,7 +108,7 @@ html, body, #root {
   font-weight: 800;
 }
 
-.inputFE {
+.fieldType, .fieldName {
   width: 70%;
   margin-left: 7px;
   margin-right: 7px;
