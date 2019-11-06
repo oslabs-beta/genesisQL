@@ -55,35 +55,44 @@ class MainContainer extends Component {
   handleFormSubmitButton() {
     const tableName = document.querySelector('.tableName').value;
 
-    const name = [];
-    const field = [];
-    const fieldName = [];
-    document.querySelectorAll('.fieldName').forEach(
-      (el) => fieldName.push(el.value),
+    const fieldNames = [];
+    document.querySelectorAll('.fieldNames').forEach(
+      (el) => fieldNames.push(el.value),
     );
-    const fieldType = [];
-    document.querySelectorAll('.fieldType').forEach(
-      (el) => fieldType.push(el.value),
+    const fieldTypes = [];
+    document.querySelectorAll('.fieldTypes').forEach(
+      (el) => fieldTypes.push(el.value),
     );
     // const tableName = document.getElementsByClassName('tableName');
     // const fieldName = document.getElementsByClassName('fieldName');
     // const fieldType = document.getElementsByClassName('fieldType');
     console.log(tableName);
-    console.log(fieldName);
-    console.log(fieldType);
-    console.log('test');
+    console.log(fieldNames);
+    console.log(fieldTypes);
 
     // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
     const codeGenPayload = {
       tables: [
         {
           objTypeName: tableName,
-          fieldName,
-          fieldType,
+          fieldNames,
+          fieldTypes,
         },
       ],
     };
     console.log('codeGenPayload:', codeGenPayload);
+
+    // SEND FETCH REQUEST TO CODE-GEN ENDPOINT, WITH PAYLOAD
+    fetch('/code', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(codeGenPayload),
+    })
+      .then((data) => data.json())
+      .then((data) => console.log('data', data));
   }
 
   render() {
