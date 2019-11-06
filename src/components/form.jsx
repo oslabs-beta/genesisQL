@@ -5,7 +5,7 @@
  * @author Tom Herrmann and Adam Goren
  * @date 10/29/2019
  * @description Form for selecting which data is submitted in schema
- *
+ * @dataListSource https://blog.teamtreehouse.com/creating-autocomplete-dropdowns-datalist-element
  * ***********************************
  */
 
@@ -15,9 +15,9 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      formDataTypes: {}
+      formDataTypes: {},
+      formInputOptions: []
     }
-    // this.dataToForm = this.dataToForm.bind(this);
   }
 
   componentDidMount(){
@@ -43,20 +43,38 @@ class Form extends Component {
       }
       formDataTypes[key] = type;
     }
-    // console.log('object formDataTypes ---> ', formDataTypes)
-    this.setState({ formDataTypes })
+    // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
+    
+    // console.log("formInputOptions", formInputOptions)
+    
+    this.setState({ 
+      formDataTypes,
+      // formInputOptions
+    })
+    console.log('object formDataTypes ---> ', this.state.formDataTypes)
+
   }
   
   render() {
-    console.log("this.state.formDataTypes", this.state.formDataTypes)
-    // this.dataToForm()
+    const formDataTypesKeys = Object.keys(this.state.formDataTypes)
+
+    const formInputOptions = [];
+    for(let i = 0; i < formDataTypesKeys.length; i++){
+      formInputOptions.push(<option key={i} value={formDataTypesKeys[i]}/>)
+      // formInputOptions.push(<option value="andrew"/>)
+    }
+    // console.log("this.state.formDataTypes", this.state.formDataTypes)
+    console.log("fieldInputOptions" , formInputOptions)
     return (
       <div id="form">
         {/* https://reactjs.org/docs/forms.html */}
         <p className="sbTitle">Field Editor</p>
         <label>
             Table:
-          <input className="tableName" type="text" name="tableName" />
+          <input className="tableName" type="text" name="tableName" list="formDataTypesKeys"/>
+          <datalist id="formDataTypesKeys">
+            {formInputOptions}
+          </datalist>
         </label>
         <label>
             Field Name:
