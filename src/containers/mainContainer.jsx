@@ -72,6 +72,18 @@ class MainContainer extends Component {
     console.log(fieldName);
     console.log(fieldType);
     console.log('test');
+
+    // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
+    const codeGenPayload = {
+      tables: [
+        {
+          objTypeName: tableName,
+          fieldName,
+          fieldType,
+        },
+      ],
+    };
+    console.log('codeGenPayload:', codeGenPayload);
   }
 
   render() {
