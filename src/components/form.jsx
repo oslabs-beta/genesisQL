@@ -15,62 +15,82 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      formDataTypes: {}
-    }
+      formDataTypes: {},
+    };
     // this.dataToForm = this.dataToForm.bind(this);
   }
 
-  componentDidMount(){
-    console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent)
+  componentDidMount() {
+    console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
 
     const formDataTypes = {};
     const { dataViewContent } = this.props;
-    for(let key in dataViewContent){
+    for (const key in dataViewContent) {
       let type = '';
-      switch(typeof dataViewContent[key]){
-        case 'string': 
-          type = 'String'
+      switch (typeof dataViewContent[key]) {
+        case 'string':
+          type = 'String';
           break;
         case 'number':
-          type = 'Int'
+          type = 'Int';
           break;
         case 'boolean':
-          type = 'Boolean'
+          type = 'Boolean';
           break;
         case 'object':
-          type = 'Custom'
+          type = 'Custom';
           break;
       }
       formDataTypes[key] = type;
     }
     // console.log('object formDataTypes ---> ', formDataTypes)
-    this.setState({ formDataTypes })
+    this.setState({ formDataTypes });
   }
-  
+
   render() {
-    console.log("this.state.formDataTypes", this.state.formDataTypes)
+    console.log('this.state.formDataTypes', this.state.formDataTypes);
     // this.dataToForm()
     return (
       <div id="form">
-        {/* https://reactjs.org/docs/forms.html */}
-        <p className="sbTitle">Field Editor</p>
-        <label>
+        <div id="inputContainer">
+          {/* https://reactjs.org/docs/forms.html */}
+          <p className="sbTitle">Field Editor</p>
+          <label>
             Table:
-          <input className="tableName" type="text" name="tableName" />
-        </label>
-        <label>
+            <input className="tableName" type="text" name="tableName" />
+          </label>
+          <div className="inputFields">
+            <label>
             Field Name:
-          <input className="fieldName" type="text" name="fieldName" />
-        </label>
-        <label>
+              <input className="fieldName" type="text" name="fieldName" />
+            </label>
+            <label>
             Field Type:
-          <input className="fieldType" type="text" name="fieldType" />
-        </label>
-        <label>
+              <input className="fieldType" type="text" name="fieldType" />
+            </label>
+            <label>
             Required:
-          <input type="checkbox" name="nonNullable" />
-        </label>
+              <input type="checkbox" name="nonNullable" />
+            </label>
+          </div>
+        </div>
         <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>
+        <div>
+          <button onClick={
+            () => {
+              // adds new field input options
+              const inputContainer = document.querySelector('#inputContainer');
+              const inputFields = document.querySelector('.inputFields');
+              console.log(inputFields);
+              const clonedInputFields = inputFields.cloneNode(true);
+              inputContainer.appendChild(clonedInputFields);
+              // console.log(inputContainer);
+            }
+        }
+          >
+          Add New Field
+          </button>
+        </div>
       </div>
     );
   }
