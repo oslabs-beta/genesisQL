@@ -33,7 +33,7 @@ html, body, #root {
 #mainContainer {
   display: flex;
   flex-direction: column;
-  border: 5px solid yellow;
+  border: 1px solid black;
   width: 95%;
   height: 70%;
 }
@@ -42,8 +42,7 @@ html, body, #root {
   display: flex;
   flex-direction: row;
   height: 7%;
-  border: 5px solid red;
-  border-style: solid;
+  border: 1px solid black;
 }
 
 #tabsContainer {
@@ -61,38 +60,45 @@ html, body, #root {
   flex-direction: row;
   height: -webkit-fill-available;
   width: -webkit-fill-available;
-  border: 5px solid purple;
+  /* border: 5px solid purple; */
 }
 
 #schemaBuilderContainer {
   display: flex;
   flex-direction: row;
   width: -webkit-fill-available;
-  border: 5px solid orange;
+  /* border: 5px solid orange; */
 }
 
 #codeOutput {
   display: flex;
   flex-direction: column;
   width: -webkit-fill-available;
-  border: 5px solid brown;
+  /* border: 5px solid brown; */
   background-color: white;
 }
 
 #dataView {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  border: 5px solid blue;
+  width: 50%;
+  border: 1px solid black;
   background-color: white;
 }
 
 #form {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   background-color: white;
-  border: 5px solid teal;
+  border: 1px solid black;
+}
+
+#formSubmit {
+  height: 4%;
+  width: 30%;
+  margin-top: 3%;
+
 }
 
 /* header: https://www.w3schools.com/howto/howto_css_style_header.asp */
