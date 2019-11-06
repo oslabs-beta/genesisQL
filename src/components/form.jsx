@@ -33,7 +33,7 @@ class Form extends Component {
             Required:
           <input type="checkbox" name="nonNullable" />
         </label>
-        <button type="submit" value="Submit" onClick={this.props.handleFormSubmitButton} />
+        <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>
       </div>
     );
   }
