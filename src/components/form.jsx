@@ -81,11 +81,11 @@ class Form extends Component {
 
             <label>
             Field Name:
-              <input className="fieldName" type="text" name="fieldName" />
+              <input className="fieldNames" type="text" name="fieldName" />
             </label>
             <label>
             Field Type:
-              <input className="fieldType" type="text" name="fieldType" />
+              <input className="fieldTypes" type="text" name="fieldType" />
             </label>
             <label>
             Required:
