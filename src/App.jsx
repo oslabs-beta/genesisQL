@@ -42,13 +42,19 @@ class App extends Component {
       },
       body: JSON.stringify({ url: data }),
     })
-      .then((data) => data.json())
-      .then((result) => this.setState({ dataViewContent: JSON.stringify(result) }))
+      .then((data) => {
+        // console.log('data', data)
+        return data.json()
+      })
+      .then((result) => {
+        this.setState({ dataViewContent: result })
+        // console.log(result)
+      })
       .catch((err) => (console.log('ERROR', err)));
   }
 
   render() {
-    console.log('DVC IN APP', this.state.dataViewContent);
+    // console.log('DVC IN APP', this.state.dataViewContent);
     return (
       <div className="App">
         <Icon>star</Icon>

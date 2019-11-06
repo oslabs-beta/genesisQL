@@ -32,7 +32,7 @@ id="searchInput"
 type="text"
 placeholder="Paste here, motherfucker"
 onSubmit={() => {
-              console.log('INSIDE SEARCH ONCLICK FUNC');
+              {/* console.log('INSIDE SEARCH ONCLICK FUNC'); */}
               this.props.dataPOSTRequest(document.getElementById('searchInput').value);
             }}
             />
@@ -51,7 +51,7 @@ onSubmit={() => {
         <button
           id="searchButton"
           onClick={() => {
-            console.log('INSIDE SEARCH ONCLICK FUNC');
+            {/* console.log('INSIDE SEARCH ONCLICK FUNC'); */}
             this.props.dataPOSTRequest(document.getElementById('searchInput').value);
           }}
           type="submit"
