@@ -71,20 +71,23 @@ class Form extends Component {
           <p className="sbTitle">Field Editor</p>
           <label>
             Object Type:
-            <input className="objectType" type="text" name="objectType" list="formDataTypesKeys" />
-            <datalist id="formDataTypesKeys">
-              {formInputOptions}
-            </datalist>
+            <input className="objectType" type="text" name="objectType" />
           </label>
           <div className="inputFields">
 
             <label>
             Field Name:
-              <input className="fieldNames" type="text" name="fieldName" />
+              <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" />
+              <datalist id="formDataTypesKeys">
+                {formInputOptions}
+              </datalist>
             </label>
             <label>
             Field Type:
               <input className="fieldTypes" type="text" name="fieldType" />
+              <datalist id="formDataTypesKeys">
+                {formInputOptions}
+              </datalist>
             </label>
             <label>
             Required:
