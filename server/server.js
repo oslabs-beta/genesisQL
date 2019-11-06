@@ -28,10 +28,10 @@ app.post('/search', searchController.fetch, /* searchController.post, */(req, re
 
 // TO GENERATE CODE app.post('/code', )
 app.post('/code', (req, res) => {
-  const { tables } = req.body;
+  const { objectTypes } = req.body;
   console.log(req.body);
   res.set('Content-Type', 'application/json');
-  res.send(JSON.stringify(schemaGen(tables)));
+  res.send(JSON.stringify(schemaGen(objectTypes)));
 });
 
 // serves PRODUCTION bundle
