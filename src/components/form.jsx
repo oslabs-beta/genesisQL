@@ -104,8 +104,12 @@ class Form extends Component {
               const inputFields = document.querySelector('.inputFields');
               console.log(inputFields);
               const clonedInputFields = inputFields.cloneNode(true);
+
+              // remove pre-existing text that was entered from our cloned inputs, before we append them
+              clonedInputFields.querySelector('.fieldNames').value = '';
+              clonedInputFields.querySelector('.fieldTypes').value = '';
+
               inputContainer.appendChild(clonedInputFields);
-              // console.log(inputContainer);
             }
         }
           >
