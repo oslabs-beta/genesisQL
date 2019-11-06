@@ -16,8 +16,8 @@ class Form extends Component {
     super(props);
     this.state = {
       formDataTypes: {},
-      formInputOptions: []
-    }
+      formInputOptions: [],
+    };
   }
 
   componentDidMount() {
@@ -44,38 +44,37 @@ class Form extends Component {
       formDataTypes[key] = type;
     }
     // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
-    
+
     // console.log("formInputOptions", formInputOptions)
-    
-    this.setState({ 
+
+    this.setState({
       formDataTypes,
       // formInputOptions
-    })
-    console.log('object formDataTypes ---> ', this.state.formDataTypes)
-
+    });
+    console.log('object formDataTypes ---> ', this.state.formDataTypes);
   }
 
   render() {
-    const formDataTypesKeys = Object.keys(this.state.formDataTypes)
+    const formDataTypesKeys = Object.keys(this.state.formDataTypes);
 
     const formInputOptions = [];
-    for(let i = 0; i < formDataTypesKeys.length; i++){
-      formInputOptions.push(<option key={i} value={formDataTypesKeys[i]}/>)
+    for (let i = 0; i < formDataTypesKeys.length; i++) {
+      formInputOptions.push(<option key={i} value={formDataTypesKeys[i]} />);
       // formInputOptions.push(<option value="andrew"/>)
     }
     // console.log("this.state.formDataTypes", this.state.formDataTypes)
-    console.log("fieldInputOptions" , formInputOptions)
+    console.log('fieldInputOptions', formInputOptions);
     return (
       <div id="form">
         <div id="inputContainer">
           {/* https://reactjs.org/docs/forms.html */}
           <p className="sbTitle">Field Editor</p>
           <label>
-            Table:
-            <input className="tableName" type="text" name="tableName"  list="formDataTypesKeys" />
-          <datalist id="formDataTypesKeys">
-            {formInputOptions}
-          </datalist>
+            Object Type:
+            <input className="objectType" type="text" name="objectType" list="formDataTypesKeys" />
+            <datalist id="formDataTypesKeys">
+              {formInputOptions}
+            </datalist>
           </label>
           <div className="inputFields">
 
