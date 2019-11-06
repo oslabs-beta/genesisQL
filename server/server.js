@@ -20,18 +20,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Handles getting data and send it back to clients */
 
-app.post('/search', searchController.fetch, /*searchController.post,*/(req, res) => {
-  console.log('RESPONSE LOCALS FETCHED DATA', res.locals.fetch)
+app.post('/search', searchController.fetch, /* searchController.post, */(req, res) => {
+  console.log('RESPONSE LOCALS FETCHED DATA', res.locals.fetch);
   // const { fetch } = res.locals
   res.send(res.locals.fetch);
 });
 
 // TO GENERATE CODE app.post('/code', )
 app.post('/code', (req, res) => {
-  // const { tables } = req.body;
+  const { tables } = req.body;
   console.log(req.body);
-  res.send(schemaGen(tables));
-})
+  res.set('Content-Type', 'application/json');
+  res.send(JSON.stringify(schemaGen(tables)));
+});
 
 // serves PRODUCTION bundle
 app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
