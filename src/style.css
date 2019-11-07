@@ -16,7 +16,7 @@ html, body, #root {
   height: 95%;
   width: 95%;
   margin: 1%;
-  border: 5px solid green;
+  border: 1px solid black;
   background-color: #7fc4fd;
 }
 

@@ -95,7 +95,6 @@ class Form extends Component {
             </label>
           </div>
         </div>
-        <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>
         <div>
           <button onClick={
             () => {
@@ -116,6 +115,7 @@ class Form extends Component {
           Add New Field
           </button>
         </div>
+        <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>
       </div>
     );
   }
