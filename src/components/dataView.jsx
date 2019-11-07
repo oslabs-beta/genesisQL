@@ -16,19 +16,18 @@ class DataView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayContent: ''
-    }
+      displayContent: '',
+    };
   }
 
   componentDidMount() {
     // displyContent will leave container empty until dataViewContent is not null
     if (this.props.dataViewContent) {
-      this.setState({ displayContent: JSON.stringify(this.props.dataViewContent) })
+      this.setState({ displayContent: JSON.stringify(this.props.dataViewContent) });
     }
   }
 
   render() {
-
     // console.log('DISPLAY CONTENT', this.state.displayContent);
     return (
       <div id="dataView">
