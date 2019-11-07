@@ -43,7 +43,7 @@ class MainContainer extends Component {
         console.log('CHANGING CURRENT TAB TO SCB');
         break;
       case 'codeOutputTab':
-        this.setState({ currentTab: <CodeOutput /> });
+        this.setState({ currentTab: <CodeOutput codeGeneratedString={this.state.codeGeneratedString} /> });
         console.log('CHANGING CURRENT TAB TO CO');
         break;
       default:
@@ -53,7 +53,7 @@ class MainContainer extends Component {
 
   // when user clicks submit button in 'Form', sends data to back-end
   handleFormSubmitButton() {
-    const tableName = document.querySelector('.tableName').value;
+    const objectType = document.querySelector('.objectType').value;
 
     const fieldNames = [];
     document.querySelectorAll('.fieldNames').forEach(
@@ -63,18 +63,18 @@ class MainContainer extends Component {
     document.querySelectorAll('.fieldTypes').forEach(
       (el) => fieldTypes.push(el.value),
     );
-    // const tableName = document.getElementsByClassName('tableName');
+    // const objectType = document.getElementsByClassName('objectType');
     // const fieldName = document.getElementsByClassName('fieldName');
     // const fieldType = document.getElementsByClassName('fieldType');
-    console.log(tableName);
+    console.log(objectType);
     console.log(fieldNames);
     console.log(fieldTypes);
 
     // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
     const codeGenPayload = {
-      tables: [
+      objectTypes: [
         {
-          objTypeName: tableName,
+          objTypeName: objectType,
           fieldNames,
           fieldTypes,
         },
@@ -92,7 +92,12 @@ class MainContainer extends Component {
       body: JSON.stringify(codeGenPayload),
     })
       .then((data) => data.json())
-      .then((data) => console.log('data', data));
+      .then((data) => {
+        console.log('data', data);
+        // SETTING STATE
+        this.setState({ codeGeneratedString: data });
+        console.log('state is:', this.state);
+      });
   }
 
   render() {
@@ -102,7 +107,7 @@ class MainContainer extends Component {
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
         <NavBar changeCurrentTab={this.changeCurrentTab} currentTab={this.state.currentTab} />
-        <ProductionContainer currentTab={this.state.currentTab} />
+        <ProductionContainer currentTab={this.state.currentTab} codeGeneratedString={this.state.codeGeneratedString} />
       </div>
     );
   }

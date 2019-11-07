@@ -16,7 +16,7 @@ class CodeOutput extends Component {
   render() {
     return (
       <div id="codeOutput">
-        <p>'CodeOutput Component'</p>
+        <pre>{this.props.codeGeneratedString}</pre>
       </div>
     );
   }
