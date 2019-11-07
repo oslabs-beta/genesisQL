@@ -42,12 +42,12 @@ class App extends Component {
       },
       body: JSON.stringify({ url: data }),
     })
-      .then((data) => {
+      .then((data) => 
         // console.log('data', data)
-        return data.json()
-      })
+         data.json()
+      )
       .then((result) => {
-        this.setState({ dataViewContent: result })
+        this.setState({ dataViewContent: result });
         // console.log(result)
       })
       .catch((err) => (console.log('ERROR', err)));
@@ -57,7 +57,7 @@ class App extends Component {
     // console.log('DVC IN APP', this.state.dataViewContent);
     return (
       <div className="App">
-        <Icon>star</Icon>
+        {/* <Icon>star</Icon> */}
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
         <MainContainer dataViewContent={this.state.dataViewContent} />

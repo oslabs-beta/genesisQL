@@ -13,21 +13,33 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 95%;
-  width: 95%;
-  margin: 1%;
-  border: 1px solid black;
-  background-color: #7fc4fd;
+  height: 100%;
+  width: 100%;
+  /* margin: 1%; */
+  /* border: 1px solid black; */
+  background-color: #73a1c7;
+}
+
+#searchContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 50%;
 }
 
 #search {
-  margin: 1.5%;
-  width: 95%;
+  margin-bottom: 1%;
+}
+
+#searchButton {
+  width: 15%;
+  margin-bottom: 10px;
 }
 
 #searchInput {
   width: 100%;
-  height: 55%;
+  padding-left: 20px;
+  border-radius: 200px;
 }
 
 #mainContainer {
@@ -35,6 +47,7 @@ html, body, #root {
   flex-direction: column;
   border: 1px solid black;
   width: 95%;
+  max-width: 1200px;
   height: 70%;
 }
 
@@ -60,6 +73,7 @@ html, body, #root {
   flex-direction: row;
   height: -webkit-fill-available;
   width: -webkit-fill-available;
+  background-color: #F8F8F8;
   /* border: 5px solid purple; */
 }
 
@@ -75,30 +89,35 @@ html, body, #root {
   flex-direction: column;
   width: -webkit-fill-available;
   /* border: 5px solid brown; */
-  background-color: white;
+  background-color: #F8F8F8;
 }
 
 #dataView {
   display: flex;
   flex-direction: column;
   width: 50%;
-  border: 1px solid black;
-  background-color: white;
+  border-right: 1px solid black;
+  background-color: #F8F8F8;
 }
 
 #form {
   display: flex;
   flex-direction: column;
   width: 50%;
-  background-color: white;
-  border: 1px solid black;
+  background-color: #F8F8F8;
 }
 
 #formSubmit {
   height: 4%;
   width: 30%;
   margin-top: 3%;
+}
 
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #F8F8F8;
+  font-size: 40px;
+  letter-spacing: 5px;
 }
 
 /* header: https://www.w3schools.com/howto/howto_css_style_header.asp */
@@ -108,7 +127,7 @@ html, body, #root {
   border-bottom: 1px solid black;
   padding: 8px;
   text-align: center;
-  background-color: #1abc9c;
+  background-color: #1ABCEB;
   color: white;
   font-size: 30px;
   font-weight: 800;
@@ -118,4 +137,8 @@ html, body, #root {
   width: 70%;
   margin-left: 7px;
   margin-right: 7px;
+}
+
+#addNewField {
+  margin-top: 10px;
 }
