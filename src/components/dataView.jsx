@@ -15,24 +15,31 @@ import { display } from '@material-ui/system';
 class DataView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      displayContent: '',
-    };
+    // this.state = {
+    // displayContent: '',
+    // };
   }
 
-  componentDidMount() {
-    // displyContent will leave container empty until dataViewContent is not null
-    if (this.props.dataViewContent) {
-      this.setState({ displayContent: JSON.stringify(this.props.dataViewContent, null, 2) });
-    }
-  }
+  // componentDidMount() {
+  //   // displyContent will leave container empty until dataViewContent is not null
+  //   if (this.props.dataViewContent) {
+  //     this.setState({ displayContent: JSON.stringify(this.props.dataViewContent, null, 2) });
+  //   }
+  // }
+
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.displayContent !== this.state.displayContent) {
+  //     this.setState({ displayContent: nextProps.displayContent });
+  //   }
+  // }
 
   render() {
     // console.log('DISPLAY CONTENT', this.state.displayContent);
     return (
       <div id="dataView">
         <p className="sbTitle">Data View</p>
-        <pre>{this.state.displayContent}</pre>
+        <pre>{JSON.stringify(this.props.dataViewContent, null, 2)}</pre>
       </div>
     );
   }
