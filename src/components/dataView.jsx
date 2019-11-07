@@ -23,7 +23,7 @@ class DataView extends Component {
   componentDidMount() {
     // displyContent will leave container empty until dataViewContent is not null
     if (this.props.dataViewContent) {
-      this.setState({ displayContent: JSON.stringify(this.props.dataViewContent) });
+      this.setState({ displayContent: JSON.stringify(this.props.dataViewContent, null, 2) });
     }
   }
 
@@ -32,7 +32,7 @@ class DataView extends Component {
     return (
       <div id="dataView">
         <p className="sbTitle">Data View</p>
-        {this.state.displayContent}
+        <pre>{this.state.displayContent}</pre>
       </div>
     );
   }
