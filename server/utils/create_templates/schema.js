@@ -19,24 +19,33 @@ const objectTypes = [objectType1, objectType2];
 
 function createSchema(objectTypes) {
   let result = '';
+
+  result += importApolloServer();
+
+
+  // create object type strings
+  for (const objectType of objectTypes) {
+    result += createObjType(objectType);
+  }
+
+  // create query strings
   result += `${tab}type Query {\n`;
   for (const objectType of objectTypes) {
     result += createRootQuery(objectType);
   }
   result += `${tab}}\n\n`;
+
+  // create mutation strings
   result += `${tab}type Mutation {\n`;
   for (const objectType of objectTypes) {
     result += createMutation(objectType);
   }
   result += `${tab}}\n\n`;
-  for (const objectType of objectTypes) {
-    result += createObjType(objectType);
-  }
+
 
   return result;
 }
 console.log(createSchema(objectTypes));
-
 
 function createRootQuery(objectType) {
   const { objTypeName, fieldNames, fieldTypes } = objectType;
@@ -69,6 +78,14 @@ function createObjType(objectType) {
     result += `${tab}${tab}${fieldNames[i]}: ${fieldTypes[i]}\n`;
   }
   result += `${tab}}\n\n`;
+  return result;
+}
+
+// creating our apollo server
+function importApolloServer() {
+  let result = '';
+  result += `${tab}const { ApolloServer } = require('apollo-server');\n\n`;
+  result += `${tab}const typeDefs = gql\` \n\n`;
   return result;
 }
 
