@@ -18,7 +18,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div id="searchContainer">
         <form
           id="search"
         //   action="javascript:() => {
@@ -28,13 +28,13 @@ class Search extends Component {
         >
           <label>
             <input
-id="searchInput"
-type="text"
-placeholder="Paste here, motherfucker"
-onSubmit={() => {
-              {/* console.log('INSIDE SEARCH ONCLICK FUNC'); */}
-              this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-            }}
+              id="searchInput"
+              type="text"
+              placeholder="Enter data-source here"
+              onSubmit={() => {
+                { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
+                this.props.dataPOSTRequest(document.getElementById('searchInput').value);
+              }}
             />
           </label>
           {/* <button
@@ -51,7 +51,7 @@ onSubmit={() => {
         <button
           id="searchButton"
           onClick={() => {
-            {/* console.log('INSIDE SEARCH ONCLICK FUNC'); */}
+            { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
             this.props.dataPOSTRequest(document.getElementById('searchInput').value);
           }}
           type="submit"

@@ -96,7 +96,9 @@ class Form extends Component {
           </div>
         </div>
         <div>
-          <button onClick={
+          <button
+            id="addNewField"
+            onClick={
             () => {
               // adds new field input options
               const inputContainer = document.querySelector('#inputContainer');

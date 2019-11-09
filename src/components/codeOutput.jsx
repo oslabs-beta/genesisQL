@@ -15,8 +15,10 @@ import React, { Component } from 'react';
 class CodeOutput extends Component {
   render() {
     return (
-      <div id="codeOutput">
-        <pre>{this.props.codeGeneratedString}</pre>
+      <div className="display">
+        <div id="codeOutput">
+          <pre>{this.props.codeGeneratedString}</pre>
+        </div>
       </div>
     );
   }
