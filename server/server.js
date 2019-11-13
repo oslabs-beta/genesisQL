@@ -7,7 +7,12 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const searchController = require('./utils/searchController.js');
 const schemaGen = require('./utils/create_templates/schema.js');
+
 const graphQLschema = require('./utils/create_templates/schema.js');
+
+require('dotenv').config();
+
+// console.log('PROCESS ENV', process.env);
 
 // create our server
 const app = express();
