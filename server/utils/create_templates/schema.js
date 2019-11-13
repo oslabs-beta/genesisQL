@@ -1,9 +1,6 @@
-const tab = ' ';
-// let objectType = {
-//     objTypeName: "User",
-//     fieldNames: ["id", "name"],
-//     fieldTypes: ["Int", "String"],
-// }
+const tab = '  ';
+
+// for testing purposes
 const objectType1 = {
   objTypeName: 'User',
   fieldNames: ['id', 'name'],
@@ -17,26 +14,42 @@ const objectType2 = {
 
 const objectTypes = [objectType1, objectType2];
 
+// may need to sanitize user inputs for types (e.g. string -> String, number -> Int)
 function createSchema(objectTypes) {
   let result = '';
+
+  // create import string, start type def with backtick (`)
+  result += importApolloServer();
+
+  // create object type strings
+  for (const objectType of objectTypes) {
+    result += createObjType(objectType);
+  }
+
+  // create query strings
   result += `${tab}type Query {\n`;
   for (const objectType of objectTypes) {
     result += createRootQuery(objectType);
   }
   result += `${tab}}\n\n`;
+
+  // create mutation strings
   result += `${tab}type Mutation {\n`;
   for (const objectType of objectTypes) {
     result += createMutation(objectType);
   }
   result += `${tab}}\n\n`;
-  for (const objectType of objectTypes) {
-    result += createObjType(objectType);
-  }
 
+  // create resolver string
+  result += createResolvers();
+
+  // close typedef with backtick (`), create server string
+  result += createApolloServer();
+
+  // return final fully concatenated string
   return result;
 }
 console.log(createSchema(objectTypes));
-
 
 function createRootQuery(objectType) {
   const { objTypeName, fieldNames, fieldTypes } = objectType;
@@ -72,7 +85,34 @@ function createObjType(objectType) {
   return result;
 }
 
-// console.log(createObjType(objectType));
+function createResolvers() {
+  let result = '';
+  result += `${tab}\`; \n\n`;
+  result += `${tab}const resolvers = {\n`;
+  // result += `${tab}${tab}fieldName: (parent, args, context, info) => data;\n`;
+  result += `${tab}};\n\n`;
+  return result;
+}
 
+// importing our apollo server
+function importApolloServer() {
+  let result = '';
+  result += `${tab}const { ApolloServer, gql } = require('apollo-server');\n\n`;
+  result += `${tab}const typeDefs = gql\` \n\n`;
+  return result;
+}
+
+// creating our apollo server
+function createApolloServer() {
+  let result = '';
+  result += `${tab}const port = process.env.PORT || 4000; // defaults to port 4000 \n`;
+  result += `${tab}const server = new ApolloServer({ typeDefs, resolvers });\n\n`;
+  result += `${tab}server.listen({ port }).then(({ url }) => {\n`;
+  result += `${tab}${tab}console.log(\`🚀  Server listening at \${url}\`);\n`;
+  result += `${tab}});`;
+  return result;
+}
+
+// console.log(createObjType(objectType));
 
 module.exports = createSchema;
