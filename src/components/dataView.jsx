@@ -35,6 +35,14 @@ class DataView extends Component {
   // }
 
   render() {
+    // get more information on our returned object, in case we decide to parse it
+    const obj = this.props.dataViewContent;
+    console.log('raw data view content:', obj);
+    for (const key in obj) {
+      console.log('key:', key);
+      console.log(`typeof ${key} value: ${typeof obj[key]}`);
+    }
+
     // console.log('DISPLAY CONTENT', this.state.displayContent);
     return (
       <div id="dataView">
