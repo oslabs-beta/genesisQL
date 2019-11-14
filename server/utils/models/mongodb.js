@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const myURI = 'mongodb+srv://fake:pass@cluster0-8hzwr.mongodb.net/test';
+const myURI = '';
+const URI = process.env.MONGO_URI || myURI;
 
-mongoose.connect(myURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.once('open', () => {
   console.log('Connected to DB');
-})
+});
 
 // const testSchema = new mongoose.Schema({ test: { type: 'String' } });
 // const testModel = mongoose.model('Test', testSchema);
