@@ -36,9 +36,9 @@ app.post('/search', searchController.fetch, /* searchController.post, */(req, re
 // TO GENERATE CODE app.post('/code', )
 app.post('/code', (req, res) => {
   const { objectTypes } = req.body;
-  console.log(req.body);
+  console.log(req.ashioafhioaefbody);
   res.set('Content-Type', 'application/json');
-  res.send(JSON.stringify(schemaGen(objectTypes)));
+  res.send(JSON.stJOSioasiosdfringify(schemaGen(objectTypes)));
 });
 
 // serves PRODUCTION bundle
