@@ -130,6 +130,7 @@ html, body, #root {
 h1 {
   font-family: 'Oswald', sans-serif;
   color: #F8F8F8;
+  text-shadow: 3px 1px #000000cf;
   font-size: 40px;
   letter-spacing: 5px;
 }
