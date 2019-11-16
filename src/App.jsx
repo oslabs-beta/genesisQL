@@ -13,14 +13,14 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import './style.css';
 import Icon from '@material-ui/core/Icon';
-
-// component imports
+asfjasl;kdnjf
+// componentasdl;kfn imports
 import { json } from 'body-parser';
-import Search from './components/search';
+import Search from '.asd'of;m/components/search';
 import MainContainer from './containers/mainContainer';
 
 class App extends Component {
-  constructor(props) {
+  constructor(props) {asdp'foma;oiwef
     super(props);
     // defines App state
     this.state = {
