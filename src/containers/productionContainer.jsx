@@ -10,6 +10,8 @@
  */
 
 import React, { Component } from 'react';
+import SchemaBuilderContainer from './schemaBuilderContainer';
+import CodeOutput from '../components/codeOutput';
 
 class ProductionContainer extends Component {
   constructor(props) {
@@ -17,9 +19,26 @@ class ProductionContainer extends Component {
   }
 
   render() {
+    let currentTab;
+    switch (this.props.currentTab) {
+      case 'schemaBuilderTab':
+        currentTab = <SchemaBuilderContainer 
+          dataViewContent={this.props.dataViewContent} 
+          handleFormSubmitButton={this.props.handleFormSubmitButton} /> 
+        console.log('CHANGING CURRENT TAB TO SCB');
+        break;
+      case 'codeOutputTab':
+        currentTab=<CodeOutput codeGeneratedString={this.props.codeGeneratedString} /> 
+        console.log('CHANGING CURRENT TAB TO CO');
+        break;
+      default:
+        currentTab=<SchemaBuilderContainer 
+          dataViewContent={this.props.dataViewContent} 
+          handleFormSubmitButton={this.props.handleFormSubmitButton} /> 
+    }
     return (
       <div id="productionContainer">
-        {this.props.currentTab}
+        {currentTab}
       </div>
     );
   }

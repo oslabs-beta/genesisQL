@@ -14,42 +14,23 @@ import React, { Component } from 'react';
 // component imports
 import NavBar from '../components/navBar';
 import ProductionContainer from './productionContainer';
-import SchemaBuilderContainer from './schemaBuilderContainer';
-import CodeOutput from '../components/codeOutput';
+
 
 class MainContainer extends Component {
   constructor(props) {
     super(props);
 
     // methods being passed down
-    this.changeCurrentTab = this.changeCurrentTab.bind(this);
     this.handleFormSubmitButton = this.handleFormSubmitButton.bind(this);
 
     this.state = {
-      currentTab: <SchemaBuilderContainer dataViewContent={this.props.dataViewContent} handleFormSubmitButton={this.handleFormSubmitButton} />,
-      codeGeneratedString: '',
+      codeGeneratedString: ''
     };
+
   }
 
   // changes the current tab state to swich displays from SchemaBuilderContainer to CodeOutput
-  changeCurrentTab(buttonId) {
-    // console.log('changeCurrentTab function in MAIN CONTAINER');
-    // console.log('BUTTON ID: ', buttonId);
-    // console.log('STATE CURRENTTAB: ', this.state.currentTab)
-
-    switch (buttonId) {
-      case 'schemaBuilderTab':
-        this.setState({ currentTab: <SchemaBuilderContainer dataViewContent={this.props.dataViewContent} handleFormSubmitButton={this.handleFormSubmitButton} /> });
-        console.log('CHANGING CURRENT TAB TO SCB');
-        break;
-      case 'codeOutputTab':
-        this.setState({ currentTab: <CodeOutput codeGeneratedString={this.state.codeGeneratedString} /> });
-        console.log('CHANGING CURRENT TAB TO CO');
-        break;
-      default:
-        this.setState({ currentTab: <SchemaBuilderContainer dataViewContent={this.props.dataViewContent} handleFormSubmitButton={this.handleFormSubmitButton} /> });
-    }
-  }
+ 
 
   // when user clicks submit button in 'Form', sends data to back-end
   handleFormSubmitButton() {
@@ -106,8 +87,11 @@ class MainContainer extends Component {
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
-        <NavBar changeCurrentTab={this.changeCurrentTab} currentTab={this.state.currentTab} />
-        <ProductionContainer currentTab={this.state.currentTab} codeGeneratedString={this.state.codeGeneratedString} />
+        <NavBar changeCurrentTab={this.changeCurrentTab} 
+          currentTab={this.props.currentTab} />
+        <ProductionContainer currentTab={this.props.currentTab} 
+          codeGeneratedString={this.props.codeGeneratedString} 
+          handleFormSubmitButton={this.props.handleFormSubmitButton} />
       </div>
     );
   }
