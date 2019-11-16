@@ -1,1 +1,1 @@
-console.log(welcome to GenesisQL!);
+console.log('welcome to GenesisQL!');
