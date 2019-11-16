@@ -20,6 +20,7 @@ class ProductionContainer extends Component {
 
   render() {
     let currentTab;
+    // console.log('code gen', this.props.codeGeneratedString);
     switch (this.props.currentTab) {
       case 'schemaBuilderTab':
         currentTab = <SchemaBuilderContainer 

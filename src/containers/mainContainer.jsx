@@ -47,9 +47,9 @@ class MainContainer extends Component {
     // const objectType = document.getElementsByClassName('objectType');
     // const fieldName = document.getElementsByClassName('fieldName');
     // const fieldType = document.getElementsByClassName('fieldType');
-    console.log(objectType);
-    console.log(fieldNames);
-    console.log(fieldTypes);
+    // console.log(objectType);
+    // console.log(fieldNames);
+    // console.log(fieldTypes);
 
     // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
     const codeGenPayload = {
@@ -61,7 +61,7 @@ class MainContainer extends Component {
         },
       ],
     };
-    console.log('codeGenPayload:', codeGenPayload);
+    // console.log('codeGenPayload:', codeGenPayload);
 
     // SEND FETCH REQUEST TO CODE-GEN ENDPOINT, WITH PAYLOAD
     fetch('/code', {
@@ -74,24 +74,24 @@ class MainContainer extends Component {
     })
       .then((data) => data.json())
       .then((data) => {
-        console.log('data', data);
+        // console.log('data', data);
         // SETTING STATE
         this.setState({ codeGeneratedString: data });
-        console.log('state is:', this.state);
+        // console.log('state is:', this.state);
       });
   }
 
   render() {
     // console.log('DVC IN MC', this.props.dataViewContent)
-
+    console.log('code gen', this.state.codeGeneratedString)
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
-        <NavBar changeCurrentTab={this.changeCurrentTab} 
+        <NavBar changeCurrentTab={this.props.changeCurrentTab} 
           currentTab={this.props.currentTab} />
         <ProductionContainer currentTab={this.props.currentTab} 
-          codeGeneratedString={this.props.codeGeneratedString} 
-          handleFormSubmitButton={this.props.handleFormSubmitButton} />
+          codeGeneratedString={this.state.codeGeneratedString} 
+          handleFormSubmitButton={this.handleFormSubmitButton} />
       </div>
     );
   }
