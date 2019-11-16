@@ -14,13 +14,13 @@ import React, { Component } from 'react';
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      formDataTypes: {},
-      formInputOptions: [],
-    };
+    // this.state = {
+    //   formDataTypes: {},
+    //   formInputOptions: [],
+    // };
   }
 
-  componentDidMount() {
+  render() {
     console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
 
     const formDataTypes = {};
@@ -45,26 +45,16 @@ class Form extends Component {
     }
     // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
 
-    // console.log("formInputOptions", formInputOptions)
-
-    this.setState({
-      formDataTypes,
-      // formInputOptions
-    });
-    console.log('object formDataTypes ---> ', this.state.formDataTypes);
-  }
-
-  render() {
-    const formDataTypesKeys = Object.keys(this.state.formDataTypes);
-    const formInputTypes = ['String', 'Int', 'Boolean', 'Custom Type'];
+    const formDataTypesKeys = Object.keys(formDataTypes);
+    const graphQLTypes = ['String', 'Int', 'Boolean', 'Custom Type'];
 
     const formInputOptions = [];
     for (let i = 0; i < formDataTypesKeys.length; i++) {
       formInputOptions.push(<option key={i} value={formDataTypesKeys[i]} />);
     }
     const formTypesOptions = [];
-    for (let i = 0; i < formInputTypes.length; i++) {
-      formTypesOptions.push(<option key={i} value={formInputTypes[i]} />);
+    for (let i = 0; i < graphQLTypes.length; i++) {
+      formTypesOptions.push(<option key={i} value={graphQLTypes[i]} />);
     }
 
     // console.log("this.state.formDataTypes", this.state.formDataTypes)
@@ -89,8 +79,8 @@ class Form extends Component {
             </label>
             <label>
               Field Type:
-              <input className="fieldTypes" type="text" name="fieldType" list="formInputTypes" />
-              <datalist id="formInputTypes">
+              <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" />
+              <datalist id="graphQLTypes">
                 {formTypesOptions}
               </datalist>
             </label>
