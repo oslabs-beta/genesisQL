@@ -77,21 +77,17 @@ class Form extends Component {
           <div id="inputContainer">
             {/* https://reactjs.org/docs/forms.html */}
             <label>
-            Object Type:
-              <input className="objectType" type="text" name="objectType" />
+              <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
             </label>
             <div className="inputFields">
-
               <label>
-              Field Name:
-                <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" />
+                <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" placeholder="Field Name" />
                 <datalist id="formDataTypesKeys">
                   {formInputOptions}
                 </datalist>
               </label>
               <label>
-              Field Type:
-                <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" />
+                <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" placeholder="Field Type" />
                 <datalist id="graphQLTypes">
                   {formTypesOptions}
                 </datalist>
