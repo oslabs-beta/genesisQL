@@ -103,8 +103,11 @@ class Form extends Component {
             </div>
           </div>
           <div>
-            <button
+            <Fab
               id="addNewField"
+              size="small"
+              color="secondary"
+              aria-label="add"
               onClick={
               () => {
                 // adds new field input options
@@ -121,8 +124,8 @@ class Form extends Component {
               }
             }
             >
-            Add New Field
-            </button>
+              <AddIcon />
+            </Fab>
           </div>
           <div id="submitContainer">
             <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
