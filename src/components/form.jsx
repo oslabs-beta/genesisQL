@@ -14,13 +14,13 @@ import React, { Component } from 'react';
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      formDataTypes: {},
-      formInputOptions: [],
-    };
+    // this.state = {
+    //   formDataTypes: {},
+    //   formInputOptions: [],
+    // };
   }
 
-  componentDidMount() {
+  render() {
     console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
 
     const formDataTypes = {};
@@ -45,23 +45,18 @@ class Form extends Component {
     }
     // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
 
-    // console.log("formInputOptions", formInputOptions)
-
-    this.setState({
-      formDataTypes,
-      // formInputOptions
-    });
-    console.log('object formDataTypes ---> ', this.state.formDataTypes);
-  }
-
-  render() {
-    const formDataTypesKeys = Object.keys(this.state.formDataTypes);
+    const formDataTypesKeys = Object.keys(formDataTypes);
+    const graphQLTypes = ['String', 'Int', 'Boolean', 'Custom Type'];
 
     const formInputOptions = [];
     for (let i = 0; i < formDataTypesKeys.length; i++) {
       formInputOptions.push(<option key={i} value={formDataTypesKeys[i]} />);
-      // formInputOptions.push(<option value="andrew"/>)
     }
+    const formTypesOptions = [];
+    for (let i = 0; i < graphQLTypes.length; i++) {
+      formTypesOptions.push(<option key={i} value={graphQLTypes[i]} />);
+    }
+
     // console.log("this.state.formDataTypes", this.state.formDataTypes)
     console.log('fieldInputOptions', formInputOptions);
     return (
@@ -76,21 +71,21 @@ class Form extends Component {
           <div className="inputFields">
 
             <label>
-            Field Name:
+              Field Name:
               <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" />
               <datalist id="formDataTypesKeys">
                 {formInputOptions}
               </datalist>
             </label>
             <label>
-            Field Type:
-              <input className="fieldTypes" type="text" name="fieldType" />
-              <datalist id="formDataTypesKeys">
-                {formInputOptions}
+              Field Type:
+              <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" />
+              <datalist id="graphQLTypes">
+                {formTypesOptions}
               </datalist>
             </label>
             <label>
-            Required:
+              Required:
               <input type="checkbox" name="nonNullable" />
             </label>
           </div>
@@ -99,22 +94,22 @@ class Form extends Component {
           <button
             id="addNewField"
             onClick={
-            () => {
-              // adds new field input options
-              const inputContainer = document.querySelector('#inputContainer');
-              const inputFields = document.querySelector('.inputFields');
-              console.log(inputFields);
-              const clonedInputFields = inputFields.cloneNode(true);
+              () => {
+                // adds new field input options
+                const inputContainer = document.querySelector('#inputContainer');
+                const inputFields = document.querySelector('.inputFields');
+                console.log(inputFields);
+                const clonedInputFields = inputFields.cloneNode(true);
 
-              // remove pre-existing text that was entered from our cloned inputs, before we append them
-              clonedInputFields.querySelector('.fieldNames').value = '';
-              clonedInputFields.querySelector('.fieldTypes').value = '';
+                // remove pre-existing text that was entered from our cloned inputs, before we append them
+                clonedInputFields.querySelector('.fieldNames').value = '';
+                clonedInputFields.querySelector('.fieldTypes').value = '';
 
-              inputContainer.appendChild(clonedInputFields);
+                inputContainer.appendChild(clonedInputFields);
+              }
             }
-        }
           >
-          Add New Field
+            Add New Field
           </button>
         </div>
         <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>

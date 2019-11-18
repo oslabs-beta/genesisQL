@@ -25,11 +25,30 @@ class App extends Component {
     // defines App state
     this.state = {
       dataViewContent: '',
+      currentTab: ''
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
+    this.changeCurrentTab = this.changeCurrentTab.bind(this);
   }
 
+  changeCurrentTab(buttonId) {
+    console.log('changeCurrentTab function in APP');
+    // console.log('BUTTON ID: ', buttonId);
+    console.log('STATE CURRENTTAB: ', this.state.currentTab)
+    switch (buttonId) {
+      case 'schemaBuilderTab':
+        this.setState({ currentTab: 'schemaBuilderTab' });
+        console.log('CHANGING CURRENT TAB TO SCB');
+        break;
+      case 'codeOutputTab':
+        this.setState({ currentTab: 'codeOutputTab' });
+        console.log('CHANGING CURRENT TAB TO CO');
+        break;
+      default:
+        this.setState({ currentTab: 'schemaBuilderTab' });
+    }
+  }
   // methods to pass as props
   dataPOSTRequest(data) {
     // console.log('dataPOSTRequest INPUT FIELD', data);
@@ -60,7 +79,9 @@ class App extends Component {
         {/* <Icon>star</Icon> */}
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
-        <MainContainer dataViewContent={this.state.dataViewContent} />
+        <MainContainer dataViewContent={this.state.dataViewContent} 
+          changeCurrentTab={this.changeCurrentTab} 
+          currentTab={this.state.currentTab} />
       </div>
     );
   }

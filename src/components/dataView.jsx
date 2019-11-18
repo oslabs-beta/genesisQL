@@ -35,7 +35,7 @@ class DataView extends Component {
   // }
 
   render() {
-    // console.log('DISPLAY CONTENT', this.state.displayContent);
+    // console.log('DISPLAY CONTENT', this.props.displayContent);
     return (
       <div id="dataView">
         <p className="sbTitle">Data View</p>
