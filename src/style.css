@@ -166,6 +166,12 @@ h1 {
   font-weight: 800;
 }
 
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #inputContainer {
   padding: 10px;
 }
@@ -177,10 +183,29 @@ h1 {
   padding: 10px;
 }
 
+/* Material UI is weird - this edits the field input boxes */
+
+.MuiFormControl-root.formControl {
+  margin-right:15px;
+}
+
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-formControl {
+  width: 150px;
+  margin-bottom: 15px;
+  color: #ff008e
+}
+
 #formSwitch {
+  color: grey;
   padding-top: 10px
 }
 
 #addNewField {
   margin-top: 10px;
+  margin-left: 10px;
+}
+
+#formSubmit {
+  height: auto;
+  width: auto;
 }

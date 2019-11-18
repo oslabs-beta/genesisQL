@@ -17,6 +17,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
 
 class Form extends Component {
   constructor(props) {
@@ -83,95 +86,75 @@ class Form extends Component {
               <TextField variant="standard" color="secondary" label="Object Type" className="objectType" type="text" name="objectType" />
             </label>
             <div className="inputFields">
+              <div>
+                <label>
+                  <FormControl className="formControl">
+                    <InputLabel className="fieldNames">
+                      Field Name
+                      </InputLabel>
+                    <Select
+                      value={this.state.selectedFieldName}
+                      onChange={this.handleInputChange}
+                      autoWidth={true}
+                    >
+                      {formInputOptions.map((elem, idx) => <MenuItem name="selectedFieldName" value={elem} key={idx}>{elem}</MenuItem>)}
+                    </Select>
+                  </FormControl>
+                </label>
+                <label>
+                  <FormControl className="formControl">
+                    <InputLabel className="fieldTypes">
+                      Field Types
+                      </InputLabel>
+                    <Select
+                      value={this.state.selectedGraphQLType}
+                      onChange={this.handleInputChange}
+                      autoWidth={true}
+                    >
+                      {graphQLTypes.map((elem, idx) => <MenuItem name="selectedGraphQLType" value={elem} key={idx}>{elem}</MenuItem>)}
+                    </Select>
+                  </FormControl>
+                </label>
+              </div>
+              <div>
+                <label id='formSwitch'>
+                  Non-nullable:
+                <Switch
+                    type="checkbox"
+                    name="nonNullable"
+                    checked={this.state.nullable}
+                    onChange={this.handleSwitchChange('nonNullable')}
+                    value="nonNullable"
+                    inputProps={{ 'aria-label': 'secondary checkbox' }}
+                  />
+                </label>
+                <Fab id="addNewField" size="small" onClick={
+                  () => {
+                    // adds new field input options
+                    const inputContainer = document.querySelector('#inputContainer');
+                    const inputFields = document.querySelector('.inputFields');
+                    console.log(inputFields);
+                    const clonedInputFields = inputFields.cloneNode(true);
 
-              <label>
-                <FormControl className="formControl">
-                  <InputLabel>
-                    Field Name
-                    </InputLabel>
-                  <Select
-                    value={this.state.selectedFieldName}
-                    onChange={this.handleInputChange}
-                    autoWidth={true}
-                  >
-                    {formInputOptions.map((elem, idx) => <MenuItem name="selectedFieldName" value={elem} key={idx}>{elem}</MenuItem>)}
-                  </Select>
-                </FormControl>
-              </label>
-              <label>
-                <FormControl className="formControl">
-                  <InputLabel>
-                    Field Types
-                    </InputLabel>
-                  <Select
-                    value={this.state.selectedGraphQLType}
-                    onChange={this.handleInputChange}
-                    autoWidth={true}
-                  >
-                    {graphQLTypes.map((elem, idx) => <MenuItem name="selectedGraphQLType" value={elem} key={idx}>{elem}</MenuItem>)}
-                  </Select>
-                </FormControl>
-                {/* <Autocomplete
-                  id="graphQLTypes"
-                  options={graphQLTypes}
-                  getOptionLabel={option => {
-                    console.log('OPTION IN AUTOCOMPLETE GETOPTIONLABEL -->', option)
-                    return option
-                  }}
-                  style={{ width: 300 }}
-                  // inputValue="stuff"
-                  onChange={(e, value) => console.log('value', value, 'e', e.target)}
-                  renderInput={params => (
-                    <TextField
-                      {...params}
-                      fullWidth={true}
-                      variant="standard"
-                      color="secondary"
-                      label="Field Type"
-                      className="fieldTypes"
-                      type="text"
-                      name="fieldType"
-                    // list="graphQLTypes"
-                    />
-                  )}
-                /> */}
-              </label>
-              <label id='formSwitch'>
-                Non-nullable:
-              <Switch
-                  type="checkbox"
-                  name="nonNullable"
-                  checked={this.state.nullable}
-                  onChange={this.handleSwitchChange('nonNullable')}
-                  value="nonNullable"
-                  inputProps={{ 'aria-label': 'secondary checkbox' }}
-                />
-              </label>
+                    // remove pre-existing text that was entered from our cloned inputs, before we append them
+                    clonedInputFields.querySelector('.fieldNames').value = '';
+                    clonedInputFields.querySelector('.fieldTypes').value = '';
+
+                    inputContainer.appendChild(clonedInputFields);
+                  }
+                } color="secondary" aria-label="add" >
+                  <AddIcon />
+                </Fab>
+              </div>
             </div>
           </div>
           <div>
-            <button
-              id="addNewField"
-              onClick={
-                () => {
-                  // adds new field input options
-                  const inputContainer = document.querySelector('#inputContainer');
-                  const inputFields = document.querySelector('.inputFields');
-                  console.log(inputFields);
-                  const clonedInputFields = inputFields.cloneNode(true);
-
-                  // remove pre-existing text that was entered from our cloned inputs, before we append them
-                  clonedInputFields.querySelector('.fieldNames').value = '';
-                  clonedInputFields.querySelector('.fieldTypes').value = '';
-
-                  inputContainer.appendChild(clonedInputFields);
-                }
-              }
-            >
-              Add New Field
-          </button>
           </div>
-          <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>
+          <div id="submitContainer">
+            <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
+              Submit
+            </Button>
+          </div>
         </div>
       </div>
     );
