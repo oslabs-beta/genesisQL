@@ -177,6 +177,10 @@ h1 {
   padding: 10px;
 }
 
+#formSwitch {
+  padding-top: 10px
+}
+
 #addNewField {
   margin-top: 10px;
 }

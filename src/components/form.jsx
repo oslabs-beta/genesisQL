@@ -12,11 +12,34 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete'
+import Switch from '@material-ui/core/Switch';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 class Form extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selectedFieldName: null,
+      selectedGraphQLType: null,
+      nonNullable: false
+    }
+    this.handleSwitchChange = this.handleSwitchChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
+
+  handleInputChange(e) {
+    if (e.target.name === 'selectedGraphQLType') this.setState({ selectedGraphQLType: e.target.value })
+    if (e.target.name === 'selectedFieldName') this.setState({ selectedFieldName: e.target.value })
+  }
+
+  handleSwitchChange(name) {
+    event => {
+      this.setState({ ...state, [name]: event.target.checked });
+    }
+  };
 
   render() {
     console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
@@ -62,28 +85,33 @@ class Form extends Component {
             <div className="inputFields">
 
               <label>
-                <Autocomplete
-                  id="formInputOptions"
-                  options={formInputOptions}
-                  getOptionLabel={option => console.log('OPTION IN AUTOCOMPLETE GETOPTIONLABEL -->', option)}
-                  style={{ width: 300 }}
-                  renderInput={params => (
-                    <TextField
-                      {...params}
-                      fullWidth={true}
-                      variant="standard"
-                      color="secondary"
-                      label="Field Name"
-                      className="fieldNames"
-                      type="text"
-                      name="fieldName"
-                      list="formDataTypesKeys"
-                    />
-                  )}
-                />
+                <FormControl className="formControl">
+                  <InputLabel>
+                    Field Name
+                    </InputLabel>
+                  <Select
+                    value={this.state.selectedFieldName}
+                    onChange={this.handleInputChange}
+                    autoWidth={true}
+                  >
+                    {formInputOptions.map((elem, idx) => <MenuItem name="selectedFieldName" value={elem} key={idx}>{elem}</MenuItem>)}
+                  </Select>
+                </FormControl>
               </label>
               <label>
-                <Autocomplete
+                <FormControl className="formControl">
+                  <InputLabel>
+                    Field Types
+                    </InputLabel>
+                  <Select
+                    value={this.state.selectedGraphQLType}
+                    onChange={this.handleInputChange}
+                    autoWidth={true}
+                  >
+                    {graphQLTypes.map((elem, idx) => <MenuItem name="selectedGraphQLType" value={elem} key={idx}>{elem}</MenuItem>)}
+                  </Select>
+                </FormControl>
+                {/* <Autocomplete
                   id="graphQLTypes"
                   options={graphQLTypes}
                   getOptionLabel={option => {
@@ -94,7 +122,7 @@ class Form extends Component {
                   // inputValue="stuff"
                   onChange={(e, value) => console.log('value', value, 'e', e.target)}
                   renderInput={params => (
-                    <TextField /*onChange={(e) => e.target.value}*/
+                    <TextField
                       {...params}
                       fullWidth={true}
                       variant="standard"
@@ -106,11 +134,18 @@ class Form extends Component {
                     // list="graphQLTypes"
                     />
                   )}
-                />
+                /> */}
               </label>
-              <label>
-                Required:
-              <input type="checkbox" name="nonNullable" />
+              <label id='formSwitch'>
+                Non-nullable:
+              <Switch
+                  type="checkbox"
+                  name="nonNullable"
+                  checked={this.state.nullable}
+                  onChange={this.handleSwitchChange('nonNullable')}
+                  value="nonNullable"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />
               </label>
             </div>
           </div>
