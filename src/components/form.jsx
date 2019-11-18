@@ -96,9 +96,16 @@ class Form extends Component {
                   {formTypesOptions}
                 </datalist>
               </label>
-              <label>
-              Required:
-                <input type="checkbox" name="nonNullable" />
+              <label id="formSwitch">
+                  Non-nullable:
+                <Switch
+                  type="checkbox"
+                  name="nonNullable"
+                    // checked={this.state.nullable}
+                    // onChange={this.handleSwitchChange('nonNullable')}
+                  value="nonNullable"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />
               </label>
             </div>
           </div>
