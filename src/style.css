@@ -109,8 +109,8 @@ html, body, #root {
 }
 
 #formSubmit {
-  height: 4%;
-  width: 30%;
+  height: auto;
+  width: auto;
   margin-top: 3%;
 }
 
