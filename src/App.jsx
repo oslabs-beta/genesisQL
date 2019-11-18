@@ -16,11 +16,11 @@ import Icon from '@material-ui/core/Icon';
 asfjasl;kdnjf
 // componentasdl;kfn imports
 import { json } from 'body-parser';
-import Search from '.asd'of;m/components/search';
+import Search from './components/search';
 import MainContainer from './containers/mainContainer';
 
 class App extends Component {
-  constructor(props) {asdp'foma;oiwef
+  constructor(props) {
     super(props);
     // defines App state
     this.state = {
