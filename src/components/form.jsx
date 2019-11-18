@@ -69,40 +69,43 @@ class Form extends Component {
     // console.log("this.state.formDataTypes", this.state.formDataTypes)
     console.log('fieldInputOptions', formInputOptions);
     return (
-      <div id="form">
-        <div id="inputContainer">
-          {/* https://reactjs.org/docs/forms.html */}
-          <p className="sbTitle">Field Editor</p>
-          <label>
-            Object Type:
-            <input className="objectType" type="text" name="objectType" />
-          </label>
-          <div className="inputFields">
-
-            <label>
-              Field Name:
-              <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" />
-              <datalist id="formDataTypesKeys">
-                {formInputOptions}
-              </datalist>
-            </label>
-            <label>
-              Field Type:
-              <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" />
-              <datalist id="graphQLTypes">
-                {formTypesOptions}
-              </datalist>
-            </label>
-            <label>
-              Required:
-              <input type="checkbox" name="nonNullable" />
-            </label>
-          </div>
+      <div id="formContainer">
+        <div className="sbTitle">
+          <p>Field Editor</p>
         </div>
-        <div>
-          <button
-            id="addNewField"
-            onClick={
+        <div id="form">
+          <div id="inputContainer">
+            {/* https://reactjs.org/docs/forms.html */}
+            <label>
+            Object Type:
+              <input className="objectType" type="text" name="objectType" />
+            </label>
+            <div className="inputFields">
+
+              <label>
+              Field Name:
+                <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" />
+                <datalist id="formDataTypesKeys">
+                  {formInputOptions}
+                </datalist>
+              </label>
+              <label>
+              Field Type:
+                <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" />
+                <datalist id="graphQLTypes">
+                  {formTypesOptions}
+                </datalist>
+              </label>
+              <label>
+              Required:
+                <input type="checkbox" name="nonNullable" />
+              </label>
+            </div>
+          </div>
+          <div>
+            <button
+              id="addNewField"
+              onClick={
               () => {
                 // adds new field input options
                 const inputContainer = document.querySelector('#inputContainer');
@@ -117,14 +120,15 @@ class Form extends Component {
                 inputContainer.appendChild(clonedInputFields);
               }
             }
-          >
+            >
             Add New Field
-          </button>
-        </div>
-        <div id="submitContainer">
-          <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
+            </button>
+          </div>
+          <div id="submitContainer">
+            <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
               Submit
-          </Button>
+            </Button>
+          </div>
         </div>
       </div>
     );
