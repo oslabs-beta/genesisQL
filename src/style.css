@@ -35,12 +35,19 @@ html, body, #root {
 #searchButton {
   width: 15%;
   margin-bottom: 10px;
+  box-shadow: 2px 4px 5px lightslategrey;
 }
 
 #searchInput {
   width: 100%;
   padding-left: 20px;
   border-radius: 200px;
+  box-shadow: 2px 4px 5px lightslategrey;
+}
+
+#searchButtonContainer {
+display: flex;
+justify-content: center;
 }
 
 #mainContainer {
@@ -50,6 +57,7 @@ html, body, #root {
   width: 95%;
   max-width: 1200px;
   height: 70%;
+  box-shadow: 5px 10px 15px lightslategrey;
 }
 
 #navBar {
@@ -97,6 +105,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   width: 50%;
+  height: 100%;
   border-right: 1px solid black;
   background-color: #F8F8F8;
 }
@@ -105,6 +114,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   width: 50%;
+  height: 100%;
   background-color: #F8F8F8;
 }
 
@@ -119,6 +129,7 @@ h1 {
   color: #F8F8F8;
   font-size: 40px;
   letter-spacing: 5px;
+  text-shadow: 3px 1px #000000cf;
 }
 
 /* header: https://www.w3schools.com/howto/howto_css_style_header.asp */
