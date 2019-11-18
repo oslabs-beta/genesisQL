@@ -1,6 +1,6 @@
 language: node_js
 node_js:
  - "node"
- env:
+env:
 - PG_URI=postgres://juqdonnj:URk1eALCbIPa5tgs29o2Tzs9YkvgL_yx@salt.db.elephantsql.com:5432/juqdonnj
 - MONGO_URI=mongodb+srv://fake:pass@cluster0-8hzwr.mongodb.net/test
