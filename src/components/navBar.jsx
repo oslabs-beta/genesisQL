@@ -24,10 +24,10 @@ class NavBar extends Component {
     return (
       <div id="navBar">
         <div id="tabsContainer">
-          <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => this.props.changeCurrentTab('schemaBuilderTab') }>
+          <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => this.props.changeCurrentTab('schemaBuilderTab')}>
             Schema Builder
           </Button>
-          <Button variant="contained" color="primary" id={codeOutputTab} className="tab" onClick={() => this.props.changeCurrentTab('codeOutputTab') }>
+          <Button variant="contained" color="primary" id={codeOutputTab} className="tab" onClick={() => this.props.changeCurrentTab('codeOutputTab')}>
             Code Output
           </Button>
         </div>

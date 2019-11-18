@@ -30,7 +30,7 @@ class MainContainer extends Component {
   }
 
   // changes the current tab state to swich displays from SchemaBuilderContainer to CodeOutput
- 
+
 
   // when user clicks submit button in 'Form', sends data to back-end
   handleFormSubmitButton() {
@@ -87,12 +87,15 @@ class MainContainer extends Component {
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
-        <NavBar changeCurrentTab={this.props.changeCurrentTab} 
+        <NavBar changeCurrentTab={this.props.changeCurrentTab}
           currentTab={this.props.currentTab} />
-        <ProductionContainer currentTab={this.props.currentTab} 
+        <ProductionContainer
+          currentTab={this.props.currentTab}
           codeGeneratedString={this.state.codeGeneratedString}
-          dataViewContent={this.props.dataViewContent} 
-          handleFormSubmitButton={this.handleFormSubmitButton} />
+          dataViewContent={this.props.dataViewContent}
+          handleFormSubmitButton={this.handleFormSubmitButton}
+          loading={this.props.loading}
+        />
       </div>
     );
   }

@@ -6,7 +6,12 @@ import App from './App.jsx';
 
 const theme = createMuiTheme({
   palette: {
-    // primary: purple,
+    primary: {
+      main: '#124e96',
+    },
+    secondary: {
+      main: '#ff008e'
+    }
   },
 });
 
