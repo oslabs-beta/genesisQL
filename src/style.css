@@ -44,14 +44,19 @@
     border-radius: 200px;
     box-shadow: 2px 4px 5px lightslategrey;
     border: 1px solid lightslategray;
+    /* background-image: url('../public/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat; */
   }
   #searchInput:focus {
     outline: none;
-    border: 1px solid #ff008e;
+    border: 1px solid #ff008ce7;
   }
   #searchButtonContainer {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 7px;
   }
   #searchButton {
     box-shadow: 2px 4px 5px lightslategrey;
