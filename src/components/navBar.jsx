@@ -25,7 +25,7 @@ class NavBar extends Component {
           <Tabs
             value={this.props.currentTab}
             onChange={this.props.changeCurrentTab}
-            indicatorColor="primary"
+            indicatorColor="secondary"
             textColor="primary"
           >
             <Tab label="Schema Builder" value="schemaBuilderTab" id="schemaBuilderTab" />

@@ -85,7 +85,7 @@
   }
   
   .MuiButtonBase-root:focus {
-    background: #0f407c;
+    /* background: #0f407c; */
   }
   .MuiTab-wrapper {
     color: whitesmoke;
