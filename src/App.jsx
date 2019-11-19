@@ -33,11 +33,8 @@ class App extends Component {
     this.changeCurrentTab = this.changeCurrentTab.bind(this);
   }
 
-  changeCurrentTab(buttonId) {
-    console.log('changeCurrentTab function in APP');
-    // console.log('BUTTON ID: ', buttonId);
-    console.log('STATE CURRENTTAB: ', this.state.currentTab);
-    switch (buttonId) {
+  changeCurrentTab(event, value) {
+    switch (value) {
       case 'schemaBuilderTab':
         this.setState({ currentTab: 'schemaBuilderTab' });
         console.log('CHANGING CURRENT TAB TO SCB');

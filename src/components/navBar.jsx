@@ -28,14 +28,18 @@ class NavBar extends Component {
       <div id="navBar">
         <div id="tabsContainer">
           <Tabs
-            value={'Schema Builder'}
+            value='schemaBuilderTab'
             onChange={this.props.changeCurrentTab}
+            //   () => {
+            //   // console.log('TABS -->', Tabs)
+            //   // // console.log('VALUE -->', value)
+            //   // this.props.changeCurrentTab('codeOutputTab');
+            // }}
             indicatorColor="primary"
             textColor="primary"
-
           >
-            <Tab label="Schema Builder" />
-            <Tab label="Code Output" />
+            <Tab label="Schema Builder" value="schemaBuilderTab" id="schemaBuilderTab" />
+            <Tab label="Code Output" value="codeOutputTab" id="codeOutputTab" />
           </Tabs>
           {/* <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => this.props.changeCurrentTab('schemaBuilderTab')}>
             Schema Builder
