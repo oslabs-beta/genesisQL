@@ -50,6 +50,7 @@ class App extends Component {
 
   // methods to pass as props
   dataPOSTRequest(data) {
+    if (!data) return;
     this.setState({ loading: true });
     // console.log('dataPOSTRequest INPUT FIELD', data);
     // console.log('JSON DATA', JSON.stringify(data))
