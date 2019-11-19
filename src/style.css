@@ -159,6 +159,7 @@
 
   .fieldTypes:focus, .fieldNames:focus, .objectType:focus {
     outline: none;
+    border-bottom: 2px solid #ff008e;
   }
 
   /* Material UI is weird - this edits the field input boxes */
@@ -181,4 +182,5 @@
   #formSubmit {
     height: auto;
     width: auto;
+    margin-left: 10px;
   }
