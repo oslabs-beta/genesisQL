@@ -10,72 +10,39 @@
  */
 
 import React, { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Switch from '@material-ui/core/Switch';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
+import InputField from './inputField';
 
 class Form extends Component {
   constructor(props) {
     super(props);
     // this.state = {
-    //   formDataTypes: {},
-    //   formInputOptions: [],
+    // create state array for non-nullable inputs
+    // each element will correspond to a specific switch
+    // default false
+    // onchange will switch it to true
+    //
+    // this array will be taken into the submit funciton and
+    // appen a ! to the end of the corresponding data types in code output
+    //
+    // create new field index and increment with new fields
     // };
   }
 
   render() {
-    console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
 
-    const formDataTypes = {};
-    const { dataViewContent } = this.props;
-    for (const key in dataViewContent) {
-      let type = '';
-      switch (typeof dataViewContent[key]) {
-        case 'string':
-          type = 'String';
-          break;
-        case 'number':
-          type = 'Int';
-          break;
-        case 'boolean':
-          type = 'Boolean';
-          break;
-        case 'object':
-          type = 'Custom';
-          break;
-      }
-      formDataTypes[key] = type;
-    }
-    // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
-
-    const formDataTypesKeys = Object.keys(formDataTypes);
-    const graphQLTypes = ['String', 'Int', 'Boolean', 'Custom Type'];
-
-    const formInputOptions = [];
-    for (let i = 0; i < formDataTypesKeys.length; i++) {
-      formInputOptions.push(<option key={i} value={formDataTypesKeys[i]} />);
-    }
-    const formTypesOptions = [];
-    for (let i = 0; i < graphQLTypes.length; i++) {
-      formTypesOptions.push(<option key={i} value={graphQLTypes[i]} />);
-    }
-
-    // console.log("this.state.formDataTypes", this.state.formDataTypes)
-    console.log('fieldInputOptions', formInputOptions);
+    // // console.log("this.state.formDataTypes", this.state.formDataTypes)
+    // console.log('fieldInputOptions', formInputOptions);
     return (
       <div id="formContainer">
         <div className="sbTitle">
           <p>Field Editor</p>
         </div>
         <div id="form">
-          <div id="inputContainer">
-            {/* https://reactjs.org/docs/forms.html */}
+          <InputField dataViewContent={this.props.dataViewContent} />
+          {/* https://reactjs.org/docs/forms.html
             <label>
               <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
             </label>
@@ -93,18 +60,17 @@ class Form extends Component {
                 </datalist>
               </label>
               <label id="formSwitch">
-                  Non-nullable:
+                Required:
                 <Switch
                   type="checkbox"
-                  name="nonNullable"
-                    // checked={this.state.nullable}
-                    // onChange={this.handleSwitchChange('nonNullable')}
-                  value="nonNullable"
+                  name="required"
+                  // checked={this.state.nullable}
+                  // onChange={this.handleSwitchChange('nonNullable')}
+                  value="required"
                   inputProps={{ 'aria-label': 'secondary checkbox' }}
                 />
               </label>
-            </div>
-          </div>
+            </div> */}
           <div>
             <Fab
               id="addNewField"
@@ -112,20 +78,20 @@ class Form extends Component {
               color="secondary"
               aria-label="add"
               onClick={
-              () => {
-                // adds new field input options
-                const inputContainer = document.querySelector('#inputContainer');
-                const inputFields = document.querySelector('.inputFields');
-                console.log(inputFields);
-                const clonedInputFields = inputFields.cloneNode(true);
+                () => {
+                  // adds new field input options
+                  const inputContainer = document.querySelector('#inputContainer');
+                  const inputFields = document.querySelector('.inputFields');
+                  console.log(inputFields);
+                  const clonedInputFields = inputFields.cloneNode(true);
 
-                // remove pre-existing text that was entered from our cloned inputs, before we append them
-                clonedInputFields.querySelector('.fieldNames').value = '';
-                clonedInputFields.querySelector('.fieldTypes').value = '';
+                  // remove pre-existing text that was entered from our cloned inputs, before we append them
+                  clonedInputFields.querySelector('.fieldNames').value = '';
+                  clonedInputFields.querySelector('.fieldTypes').value = '';
 
-                inputContainer.appendChild(clonedInputFields);
+                  inputContainer.appendChild(clonedInputFields);
+                }
               }
-            }
             >
               <AddIcon />
             </Fab>
