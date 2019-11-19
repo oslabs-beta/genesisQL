@@ -37,10 +37,17 @@
     margin-bottom: 10px;
   }
   #searchInput {
+    height: 30px;
     width: 100%;
     padding-left: 20px;
+    margin-bottom: 5px;
     border-radius: 200px;
     box-shadow: 2px 4px 5px lightslategrey;
+    border: 1px solid lightslategray;
+  }
+  #searchInput:focus {
+    outline: none;
+    border: 1px solid #ff008e;
   }
   #searchButtonContainer {
     display: flex;
