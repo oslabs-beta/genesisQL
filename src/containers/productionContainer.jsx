@@ -24,19 +24,27 @@ class ProductionContainer extends Component {
     // console.log('Production Container', this.props.dataViewContent);
     switch (this.props.currentTab) {
       case 'schemaBuilderTab':
-        currentTab = <SchemaBuilderContainer 
-          dataViewContent={this.props.dataViewContent} 
-          handleFormSubmitButton={this.props.handleFormSubmitButton} /> 
+        currentTab = (
+          <SchemaBuilderContainer
+            dataViewContent={this.props.dataViewContent}
+            handleFormSubmitButton={this.props.handleFormSubmitButton}
+            loading={this.props.loading}
+          />
+        );
         console.log('CHANGING CURRENT TAB TO SCB');
         break;
       case 'codeOutputTab':
-        currentTab=<CodeOutput codeGeneratedString={this.props.codeGeneratedString} /> 
+        currentTab = <CodeOutput codeGeneratedString={this.props.codeGeneratedString} />;
         console.log('CHANGING CURRENT TAB TO CO');
         break;
       default:
-        currentTab=<SchemaBuilderContainer 
-          dataViewContent={this.props.dataViewContent} 
-          handleFormSubmitButton={this.props.handleFormSubmitButton} /> 
+        currentTab = (
+          <SchemaBuilderContainer
+            dataViewContent={this.props.dataViewContent}
+            handleFormSubmitButton={this.props.handleFormSubmitButton}
+            loading={this.props.loading}
+          />
+        );
     }
     return (
       <div id="productionContainer">
