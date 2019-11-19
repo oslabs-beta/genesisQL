@@ -1,19 +1,5 @@
 const tab = '  ';
 
-// for testing purposes
-const objectType1 = {
-  objTypeName: 'User',
-  fieldNames: ['id', 'name'],
-  fieldTypes: ['Int', 'String'],
-};
-const objectType2 = {
-  objTypeName: 'Pet',
-  fieldNames: ['id', 'name'],
-  fieldTypes: ['Int', 'String'],
-};
-
-const objectTypes = [objectType1, objectType2];
-
 // may need to sanitize user inputs for types (e.g. string -> String, number -> Int)
 function createSchema(objectTypes) {
   let result = '';
@@ -49,7 +35,7 @@ function createSchema(objectTypes) {
   // return final fully concatenated string
   return result;
 }
-console.log(createSchema(objectTypes));
+// console.log(createSchema(objectTypes));
 
 function createRootQuery(objectType) {
   const { objTypeName, fieldNames, fieldTypes } = objectType;
