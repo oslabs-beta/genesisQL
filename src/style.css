@@ -176,9 +176,15 @@
     border: none;
     border-bottom: 1px solid;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
     background-color: #F8F8F8;
     font-size: medium;
+  }
+
+  #formSwitch {
+    color: grey;
+    margin-bottom: 10px;
+    margin-left: 20px;
   }
 
   .fieldTypes:focus, .fieldNames:focus, .objectType:focus {
@@ -195,16 +201,12 @@
     margin-bottom: 15px;
     color: #ff008e
   }
-  #formSwitch {
-    color: grey;
-    padding-top: 10px
-  }
   #addNewField {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
   }
   #formSubmit {
     height: auto;
     width: auto;
-    margin-left: 10px;
+    margin-left: 20px;
   }
