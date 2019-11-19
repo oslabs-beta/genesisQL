@@ -120,7 +120,7 @@
   }
   #loadSpinner {
     margin-top: 30%;
-    margin-left: 40%;
+    margin-left: 43%;
   }
   #formContainer {
     display: flex;
@@ -154,10 +154,10 @@
     border-bottom: 1px solid black;
     padding: 8px;
     text-align: center;
-    background-color: #daeaf6;
+    background-color: #cce4f7;
     color: grey;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 500;
   }
   #inputContainer {
     padding: 10px;
