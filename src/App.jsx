@@ -25,7 +25,7 @@ class App extends Component {
     // defines App state
     this.state = {
       dataViewContent: '',
-      currentTab: '',
+      currentTab: 'schemaBuilderTab',
       loading: false,
     };
     // binding methods to constructor
