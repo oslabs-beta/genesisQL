@@ -33,6 +33,8 @@ class SchemaBuilderContainer extends Component {
         <Form
           handleFormSubmitButton={this.props.handleFormSubmitButton}
           dataViewContent={this.props.dataViewContent}
+          handleNewFields={this.props.handleNewFields}
+          inputFields={this.props.inputFields}
         />
       </div>
     );

@@ -29,6 +29,8 @@ class ProductionContainer extends Component {
             dataViewContent={this.props.dataViewContent}
             handleFormSubmitButton={this.props.handleFormSubmitButton}
             loading={this.props.loading}
+            handleNewFields={this.props.handleNewFields}
+            inputFields={this.props.inputFields}
           />
         );
         console.log('CHANGING CURRENT TAB TO SCB');
@@ -43,6 +45,8 @@ class ProductionContainer extends Component {
             dataViewContent={this.props.dataViewContent}
             handleFormSubmitButton={this.props.handleFormSubmitButton}
             loading={this.props.loading}
+            handleNewFields={this.props.handleNewFields}
+            inputFields={this.props.inputFields}
           />
         );
     }

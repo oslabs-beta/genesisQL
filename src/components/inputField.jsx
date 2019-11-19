@@ -44,35 +44,30 @@ class InputField extends Component {
     }
     return (
       // https://reactjs.org/docs/forms.html
-      <div id="inputContainer">
+      <div className="inputFields">
         <label>
-          <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
+          <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" placeholder="Field Name" />
+          <datalist id="formDataTypesKeys">
+            {formInputOptions}
+          </datalist>
         </label>
-        <div className="inputFields">
-          <label>
-            <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" placeholder="Field Name" />
-            <datalist id="formDataTypesKeys">
-              {formInputOptions}
-            </datalist>
-          </label>
-          <label>
-            <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" placeholder="Field Type" />
-            <datalist id="graphQLTypes">
-              {formTypesOptions}
-            </datalist>
-          </label>
-          <label id="formSwitch">
-            Required:
+        <label>
+          <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" placeholder="Field Type" />
+          <datalist id="graphQLTypes">
+            {formTypesOptions}
+          </datalist>
+        </label>
+        <label id="formSwitch">
+          Required:
             <Switch
-              type="checkbox"
-              name="required"
-              // checked={this.state.nullable}
-              // onChange={this.handleSwitchChange('nonNullable')}
-              value="required"
-              inputProps={{ 'aria-label': 'secondary checkbox' }}
-            />
-          </label>
-        </div>
+            type="checkbox"
+            name="required"
+            // checked={this.state.nullable}
+            // onChange={this.handleSwitchChange('nonNullable')}
+            value="required"
+            inputProps={{ 'aria-label': 'secondary checkbox' }}
+          />
+        </label>
       </div>
     )
   }

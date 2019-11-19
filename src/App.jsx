@@ -18,6 +18,7 @@ import Icon from '@material-ui/core/Icon';
 import { json } from 'body-parser';
 import Search from './components/search';
 import MainContainer from './containers/mainContainer';
+import InputField from './components/inputField';
 
 class App extends Component {
   constructor(props) {
@@ -27,10 +28,12 @@ class App extends Component {
       dataViewContent: '',
       currentTab: 'schemaBuilderTab',
       loading: false,
+      inputFields: [<InputField dataViewContent={this.props.dataViewContent} />]
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
     this.changeCurrentTab = this.changeCurrentTab.bind(this);
+    this.handleNewFields = this.handleNewFields.bind(this);
   }
 
   changeCurrentTab(event, value) {
@@ -72,6 +75,13 @@ class App extends Component {
       .catch((err) => (console.log('ERROR', err)));
   }
 
+  handleNewFields() {
+    const newStateArr = this.state.inputFields.slice(0)
+    newStateArr.push(<InputField dataViewContent={this.props.dataViewContent} />)
+    console.log('HANDLE NEW FIELDS ~ INPUT FIELDS COPY -->', newStateArr)
+    this.setState({ inputFields: newStateArr })
+  }
+
   render() {
     // console.log('DVC IN APP', this.state.dataViewContent);
     return (
@@ -84,6 +94,8 @@ class App extends Component {
           changeCurrentTab={this.changeCurrentTab}
           currentTab={this.state.currentTab}
           loading={this.state.loading}
+          handleNewFields={this.handleNewFields}
+          inputFields={this.state.inputFields}
         />
       </div>
     );

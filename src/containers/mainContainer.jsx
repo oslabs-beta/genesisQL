@@ -96,6 +96,8 @@ class MainContainer extends Component {
           dataViewContent={this.props.dataViewContent}
           handleFormSubmitButton={this.handleFormSubmitButton}
           loading={this.props.loading}
+          handleNewFields={this.props.handleNewFields}
+          inputFields={this.props.inputFields}
         />
       </div>
     );
