@@ -28,7 +28,7 @@ class App extends Component {
       dataViewContent: '',
       currentTab: 'schemaBuilderTab',
       loading: false,
-      inputFields: [<InputField dataViewContent={this.props.dataViewContent} />]
+      inputFields: []
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
@@ -76,14 +76,13 @@ class App extends Component {
   }
 
   handleNewFields() {
-    const newStateArr = this.state.inputFields.slice(0)
-    newStateArr.push(<InputField dataViewContent={this.props.dataViewContent} />)
-    console.log('HANDLE NEW FIELDS ~ INPUT FIELDS COPY -->', newStateArr)
-    this.setState({ inputFields: newStateArr })
+    const inputFieldsCopy = this.state.inputFields.slice(0)
+    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} id={`if${inputFieldsCopy.length + 1}`} />)
+    console.log('HANDLE NEW FIELDS ~ INPUT FIELDS COPY -->', inputFieldsCopy)
+    this.setState({ inputFields: inputFieldsCopy })
   }
 
   render() {
-    // console.log('DVC IN APP', this.state.dataViewContent);
     return (
       <div className="App">
         {/* <Icon>star</Icon> */}

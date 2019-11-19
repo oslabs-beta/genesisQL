@@ -81,8 +81,6 @@ class MainContainer extends Component {
   }
 
   render() {
-    console.log('DVC IN MC', this.props.dataViewContent);
-    // console.log('code gen', this.state.codeGeneratedString)
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}

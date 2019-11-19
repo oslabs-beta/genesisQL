@@ -7,7 +7,7 @@ class InputField extends Component {
   }
 
   render() {
-    console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
+    console.log('INPUTM FIELD ID', this.props.id);
 
     const formDataTypes = {};
     const { dataViewContent } = this.props;

@@ -21,8 +21,6 @@ class SchemaBuilderContainer extends Component {
   }
 
   render() {
-    // console.log('DVC IN SB', this.props.dataViewContent)
-
     return (
       <div id="schemaBuilderContainer">
         {/* <p>'Schema Builder Container'</p> */}

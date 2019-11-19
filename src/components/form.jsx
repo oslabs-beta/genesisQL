@@ -10,6 +10,7 @@
  */
 
 import React, { Component } from 'react';
+import InputField from './inputField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
@@ -32,6 +33,8 @@ class Form extends Component {
   }
 
   render() {
+    console.log('FORM INPUT FIELD IN PROPS -->', this.props.inputFields)
+    console.log('DATA VIEW CONTENT in FORM -->', this.props.dataViewContent)
     // // console.log("this.state.formDataTypes", this.state.formDataTypes)
     // console.log('fieldInputOptions', formInputOptions);
     return (
@@ -44,6 +47,7 @@ class Form extends Component {
             <label>
               <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
             </label>
+            <InputField dataViewContent={this.props.dataViewContent} id="if0" />
             {this.props.inputFields}
             <div>
               <Fab
