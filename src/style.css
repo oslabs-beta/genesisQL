@@ -1,145 +1,186 @@
   /* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
-html, body, #root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  width: 100%;
-  font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
-}
+  html, body, #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
+  }
+  p {
+    margin: 10px;
+  }
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* margin: 1%; */
+    /* border: 1px solid black; */
+    background-color: #0d8abc;
+  }
+  #searchContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+  #search {
+    margin-bottom: 1%;
+  }
+  #searchButton {
+    width: 15%;
+    margin-bottom: 10px;
+  }
+  #searchInput {
+    width: 100%;
+    padding-left: 20px;
+    border-radius: 200px;
+    box-shadow: 2px 4px 5px lightslategrey;
+  }
+  #searchButtonContainer {
+    display: flex;
+    justify-content: center;
+  }
+  #searchButton {
+    box-shadow: 2px 4px 5px lightslategrey;
+  }
+  #mainContainer {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 10px 15px lightslategrey;
+    /* border: 1px solid black; */
+    width: 95%;
+    max-width: 1200px;
+    height: 70%;
+  }
+  #navBar {
+    display: flex;
+    flex-direction: row;
+    height: 7%;
+    /* border: 1px solid black; */
+  }
+  #tabsContainer {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+  }
+  .tab {
+    height: -webkit-fill-available;
+    width: 50%;
+  }
+  #productionContainer {
+    display: flex;
+    flex-direction: row;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    background-color: #F8F8F8;
+    /* border: 5px solid purple; */
+  }
+  #schemaBuilderContainer {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    /* border: 5px solid orange; */
+  }
+  #codeOutput {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    /* border: 5px solid brown; */
+    background-color: #F8F8F8;
+  }
+  #dataViewContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-height: 590px;
+    border-right: 1px solid black;
+    background-color: #F8F8F8;
+  }
+  #dataView {
+    overflow: auto;
+  }
+  #loadSpinner {
+    margin-top: 30%;
+    margin-left: 40%;
+  }
+  #formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-height: 590px;
+    background-color: #F8F8F8;
+  }
+  #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+  }
+  #formSubmit {
+    height: 4%;
+    width: 30%;
+    margin-top: 3%;
+  }
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #F8F8F8;
+    text-shadow: 3px 1px #000000cf;
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
+  /* header: https://www.w3schools.com/howto/howto_css_style_header.asp */
+  .sbTitle {
+    margin: 0px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    background-color: #daeaf6;
+    color: grey;
+    font-size: 30px;
+    font-weight: 800;
+  }
+  #inputContainer {
+    padding: 10px;
+  }
+  .fieldTypes, .fieldNames, .objectType {
+    border: none;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #F8F8F8;
+    font-size: medium;
+  }
 
+  .fieldTypes:focus, .fieldNames:focus, .objectType:focus {
+    outline: none;
+    border-bottom: 2px solid #ff008e;
+  }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  /* margin: 1%; */
-  /* border: 1px solid black; */
-  background-color: #73a1c7;
-}
-
-#searchContainer {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  width: 50%;
-}
-
-#search {
-  margin-bottom: 1%;
-}
-
-#searchButton {
-  width: 15%;
-  margin-bottom: 10px;
-}
-
-#searchInput {
-  width: 100%;
-  padding-left: 20px;
-  border-radius: 200px;
-}
-
-#mainContainer {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  width: 95%;
-  max-width: 1200px;
-  height: 70%;
-}
-
-#navBar {
-  display: flex;
-  flex-direction: row;
-  height: 7%;
-  border: 1px solid black;
-}
-
-#tabsContainer {
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
-}
-
-.tab {
-  height: -webkit-fill-available;
-  width: 50%;
-}
-
-#productionContainer {
-  display: flex;
-  flex-direction: row;
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
-  background-color: #F8F8F8;
-  /* border: 5px solid purple; */
-}
-
-#schemaBuilderContainer {
-  display: flex;
-  flex-direction: row;
-  width: -webkit-fill-available;
-  /* border: 5px solid orange; */
-}
-
-#codeOutput {
-  display: flex;
-  flex-direction: column;
-  width: -webkit-fill-available;
-  /* border: 5px solid brown; */
-  background-color: #F8F8F8;
-}
-
-#dataView {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  border-right: 1px solid black;
-  background-color: #F8F8F8;
-}
-
-#form {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  background-color: #F8F8F8;
-}
-
-#formSubmit {
-  height: 4%;
-  width: 30%;
-  margin-top: 3%;
-}
-
-h1 {
-  font-family: 'Oswald', sans-serif;
-  color: #F8F8F8;
-  font-size: 40px;
-  letter-spacing: 5px;
-}
-
-/* header: https://www.w3schools.com/howto/howto_css_style_header.asp */
-.sbTitle {
-  margin: 0px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid black;
-  padding: 8px;
-  text-align: center;
-  background-color: #1ABCEB;
-  color: white;
-  font-size: 30px;
-  font-weight: 800;
-}
-
-.fieldType, .fieldName {
-  width: 70%;
-  margin-left: 7px;
-  margin-right: 7px;
-}
-
-#addNewField {
-  margin-top: 10px;
-}
+  /* Material UI is weird - this edits the field input boxes */
+  .MuiFormControl-root.formControl {
+    margin-right:15px;
+  }
+  .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-formControl {
+    width: 150px;
+    margin-bottom: 15px;
+    color: #ff008e
+  }
+  #formSwitch {
+    color: grey;
+    padding-top: 10px
+  }
+  #addNewField {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  #formSubmit {
+    height: auto;
+    width: auto;
+    margin-left: 10px;
+  }

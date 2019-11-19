@@ -24,13 +24,12 @@ class MainContainer extends Component {
     this.handleFormSubmitButton = this.handleFormSubmitButton.bind(this);
 
     this.state = {
-      codeGeneratedString: ''
+      codeGeneratedString: '',
     };
-
   }
 
   // changes the current tab state to swich displays from SchemaBuilderContainer to CodeOutput
- 
+
 
   // when user clicks submit button in 'Form', sends data to back-end
   handleFormSubmitButton() {
@@ -82,17 +81,22 @@ class MainContainer extends Component {
   }
 
   render() {
-    console.log('DVC IN MC', this.props.dataViewContent)
+    console.log('DVC IN MC', this.props.dataViewContent);
     // console.log('code gen', this.state.codeGeneratedString)
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
-        <NavBar changeCurrentTab={this.props.changeCurrentTab} 
-          currentTab={this.props.currentTab} />
-        <ProductionContainer currentTab={this.props.currentTab} 
+        <NavBar
+          changeCurrentTab={this.props.changeCurrentTab}
+          currentTab={this.props.currentTab}
+        />
+        <ProductionContainer
+          currentTab={this.props.currentTab}
           codeGeneratedString={this.state.codeGeneratedString}
-          dataViewContent={this.props.dataViewContent} 
-          handleFormSubmitButton={this.handleFormSubmitButton} />
+          dataViewContent={this.props.dataViewContent}
+          handleFormSubmitButton={this.handleFormSubmitButton}
+          loading={this.props.loading}
+        />
       </div>
     );
   }

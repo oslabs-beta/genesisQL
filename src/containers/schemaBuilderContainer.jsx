@@ -26,9 +26,14 @@ class SchemaBuilderContainer extends Component {
     return (
       <div id="schemaBuilderContainer">
         {/* <p>'Schema Builder Container'</p> */}
-        <DataView dataViewContent={this.props.dataViewContent} />
-        <Form handleFormSubmitButton={this.props.handleFormSubmitButton} 
-          dataViewContent={this.props.dataViewContent} />
+        <DataView
+          dataViewContent={this.props.dataViewContent}
+          loading={this.props.loading}
+        />
+        <Form
+          handleFormSubmitButton={this.props.handleFormSubmitButton}
+          dataViewContent={this.props.dataViewContent}
+        />
       </div>
     );
   }
