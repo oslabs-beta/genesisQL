@@ -51,7 +51,7 @@
   }
   #searchInput:focus {
     outline: none;
-    border: 1px solid rgb(187, 13, 108);
+    border: 1px solid #bb0d6c;
   }
   #searchButtonContainer {
     display: flex;
@@ -81,6 +81,16 @@
   #tabsContainer {
     height: -webkit-fill-available;
     width: -webkit-fill-available;
+    background-color: #124e96;
+  }
+  
+  .MuiButtonBase-root:focus {
+    background: #0f407c;
+    border-bottom: 5px solid #bb0d6c;
+  }
+  .MuiTab-wrapper {
+    color: whitesmoke;
+    font-size: 20;
   }
   .tab {
     height: -webkit-fill-available;
@@ -112,7 +122,7 @@
     flex-direction: column;
     width: 50%;
     max-height: 590px;
-    border-right: 1px solid black;
+    border-right: 1px solid gray;
     background-color: #F8F8F8;
   }
   #dataView {
@@ -151,7 +161,8 @@
   .sbTitle {
     margin: 0px;
     margin-bottom: 16px;
-    border-bottom: 1px solid black;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
     padding: 8px;
     text-align: center;
     background-color: #cce4f7;

@@ -11,6 +11,9 @@
 
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 class NavBar extends Component {
   constructor(props) {
@@ -24,12 +27,22 @@ class NavBar extends Component {
     return (
       <div id="navBar">
         <div id="tabsContainer">
-          <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => this.props.changeCurrentTab('schemaBuilderTab') }>
+          <Tabs
+            value={'Schema Builder'}
+            onChange={this.props.changeCurrentTab}
+            indicatorColor="primary"
+            textColor="primary"
+
+          >
+            <Tab label="Schema Builder" />
+            <Tab label="Code Output" />
+          </Tabs>
+          {/* <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => this.props.changeCurrentTab('schemaBuilderTab')}>
             Schema Builder
           </Button>
-          <Button variant="contained" color="primary" id={codeOutputTab} className="tab" onClick={() => this.props.changeCurrentTab('codeOutputTab') }>
+          <Button variant="contained" color="primary" id={codeOutputTab} className="tab" onClick={() => this.props.changeCurrentTab('codeOutputTab')}>
             Code Output
-          </Button>
+          </Button> */}
         </div>
       </div>
     );
