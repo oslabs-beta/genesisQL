@@ -10,6 +10,15 @@
  */
 
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
+import Switch from '@material-ui/core/Switch';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
 
 class Form extends Component {
   constructor(props) {
@@ -60,40 +69,49 @@ class Form extends Component {
     // console.log("this.state.formDataTypes", this.state.formDataTypes)
     console.log('fieldInputOptions', formInputOptions);
     return (
-      <div id="form">
-        <div id="inputContainer">
-          {/* https://reactjs.org/docs/forms.html */}
-          <p className="sbTitle">Field Editor</p>
-          <label>
-            Object Type:
-            <input className="objectType" type="text" name="objectType" />
-          </label>
-          <div className="inputFields">
-
-            <label>
-              Field Name:
-              <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" />
-              <datalist id="formDataTypesKeys">
-                {formInputOptions}
-              </datalist>
-            </label>
-            <label>
-              Field Type:
-              <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" />
-              <datalist id="graphQLTypes">
-                {formTypesOptions}
-              </datalist>
-            </label>
-            <label>
-              Required:
-              <input type="checkbox" name="nonNullable" />
-            </label>
-          </div>
+      <div id="formContainer">
+        <div className="sbTitle">
+          <p>Field Editor</p>
         </div>
-        <div>
-          <button
-            id="addNewField"
-            onClick={
+        <div id="form">
+          <div id="inputContainer">
+            {/* https://reactjs.org/docs/forms.html */}
+            <label>
+              <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
+            </label>
+            <div className="inputFields">
+              <label>
+                <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" placeholder="Field Name" />
+                <datalist id="formDataTypesKeys">
+                  {formInputOptions}
+                </datalist>
+              </label>
+              <label>
+                <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" placeholder="Field Type" />
+                <datalist id="graphQLTypes">
+                  {formTypesOptions}
+                </datalist>
+              </label>
+              <label id="formSwitch">
+                  Non-nullable:
+                <Switch
+                  type="checkbox"
+                  name="nonNullable"
+                    // checked={this.state.nullable}
+                    // onChange={this.handleSwitchChange('nonNullable')}
+                  value="nonNullable"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                />
+              </label>
+            </div>
+          </div>
+          <div>
+            <Fab
+              id="addNewField"
+              size="small"
+              color="secondary"
+              aria-label="add"
+              onClick={
               () => {
                 // adds new field input options
                 const inputContainer = document.querySelector('#inputContainer');
@@ -108,11 +126,16 @@ class Form extends Component {
                 inputContainer.appendChild(clonedInputFields);
               }
             }
-          >
-            Add New Field
-          </button>
+            >
+              <AddIcon />
+            </Fab>
+          </div>
+          <div id="submitContainer">
+            <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
+              Submit
+            </Button>
+          </div>
         </div>
-        <button id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>Submit Info</button>
       </div>
     );
   }

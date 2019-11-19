@@ -48,16 +48,18 @@ class Search extends Component {
           Search
         </button> */}
         </form>
-        <button
-          id="searchButton"
-          onClick={() => {
-            { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
-            this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-          }}
-          type="submit"
-        >
+        <div id="searchButtonContainer">
+          <button
+            id="searchButton"
+            onClick={() => {
+              { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
+              this.props.dataPOSTRequest(document.getElementById('searchInput').value);
+            }}
+            type="submit"
+          >
           Search
-        </button>
+          </button>
+        </div>
       </div>
     );
   }

@@ -13,8 +13,8 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import './style.css';
 import Icon from '@material-ui/core/Icon';
-asfjasl;kdnjf
-// componentasdl;kfn imports
+
+// component imports
 import { json } from 'body-parser';
 import Search from './components/search';
 import MainContainer from './containers/mainContainer';
@@ -25,7 +25,8 @@ class App extends Component {
     // defines App state
     this.state = {
       dataViewContent: '',
-      currentTab: ''
+      currentTab: '',
+      loading: false,
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
@@ -35,7 +36,7 @@ class App extends Component {
   changeCurrentTab(buttonId) {
     console.log('changeCurrentTab function in APP');
     // console.log('BUTTON ID: ', buttonId);
-    console.log('STATE CURRENTTAB: ', this.state.currentTab)
+    console.log('STATE CURRENTTAB: ', this.state.currentTab);
     switch (buttonId) {
       case 'schemaBuilderTab':
         this.setState({ currentTab: 'schemaBuilderTab' });
@@ -49,8 +50,10 @@ class App extends Component {
         this.setState({ currentTab: 'schemaBuilderTab' });
     }
   }
+
   // methods to pass as props
   dataPOSTRequest(data) {
+    this.setState({ loading: true });
     // console.log('dataPOSTRequest INPUT FIELD', data);
     // console.log('JSON DATA', JSON.stringify(data))
     fetch('/search', {
@@ -61,12 +64,11 @@ class App extends Component {
       },
       body: JSON.stringify({ url: data }),
     })
-      .then((data) => 
+      .then((data) =>
         // console.log('data', data)
-         data.json()
-      )
+        data.json())
       .then((result) => {
-        this.setState({ dataViewContent: result });
+        this.setState({ dataViewContent: result, loading: false });
         // console.log(result)
       })
       .catch((err) => (console.log('ERROR', err)));
@@ -79,9 +81,12 @@ class App extends Component {
         {/* <Icon>star</Icon> */}
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
-        <MainContainer dataViewContent={this.state.dataViewContent} 
-          changeCurrentTab={this.changeCurrentTab} 
-          currentTab={this.state.currentTab} />
+        <MainContainer
+          dataViewContent={this.state.dataViewContent}
+          changeCurrentTab={this.changeCurrentTab}
+          currentTab={this.state.currentTab}
+          loading={this.state.loading}
+        />
       </div>
     );
   }

@@ -10,36 +10,24 @@
  */
 
 import React, { Component } from 'react';
-import { display } from '@material-ui/system';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class DataView extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    // displayContent: '',
-    // };
   }
 
-  // componentDidMount() {
-  //   // displyContent will leave container empty until dataViewContent is not null
-  //   if (this.props.dataViewContent) {
-  //     this.setState({ displayContent: JSON.stringify(this.props.dataViewContent, null, 2) });
-  //   }
-  // }
-
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.displayContent !== this.state.displayContent) {
-  //     this.setState({ displayContent: nextProps.displayContent });
-  //   }
-  // }
-
   render() {
+    console.log('loading exists', this.props.loading);
     // console.log('DISPLAY CONTENT', this.props.displayContent);
     return (
-      <div id="dataView">
-        <p className="sbTitle">Data View</p>
-        <pre>{JSON.stringify(this.props.dataViewContent, null, 2)}</pre>
+      <div id="dataViewContainer">
+        <div className="sbTitle">
+          <p>Data View</p>
+        </div>
+        <div id="dataView">
+          <pre>{this.props.loading ? <CircularProgress color="secondary" id="loadSpinner" size={65} /> : this.props.dataViewContent ? JSON.stringify(this.props.dataViewContent, null, 2) : null}</pre>
+        </div>
       </div>
     );
   }
