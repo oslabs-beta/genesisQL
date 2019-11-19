@@ -18,7 +18,7 @@ class DataView extends Component {
   }
 
   render() {
-    console.log('loading exists', this.props.loading);
+    // console.log('loading exists', this.props.loading);
     // console.log('DISPLAY CONTENT', this.props.displayContent);
     return (
       <div id="dataViewContainer">

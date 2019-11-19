@@ -22,10 +22,6 @@ class Search extends Component {
       <div id="searchContainer">
         <form
           id="search"
-        //   action="javascript:() => {
-        //   console.log('INSIDE SEARCH ONCLICK FUNC');
-        //   this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-        // }"
         >
           <label>
             <input
@@ -33,7 +29,6 @@ class Search extends Component {
               type="text"
               placeholder="Enter data-source here"
               onSubmit={() => {
-                { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
                 this.props.dataPOSTRequest(document.getElementById('searchInput').value);
               }}
             />

@@ -40,11 +40,11 @@ class App extends Component {
     switch (value) {
       case 'schemaBuilderTab':
         this.setState({ currentTab: 'schemaBuilderTab' });
-        console.log('CHANGING CURRENT TAB TO SCB');
+        // console.log('CHANGING CURRENT TAB TO SCB');
         break;
       case 'codeOutputTab':
         this.setState({ currentTab: 'codeOutputTab' });
-        console.log('CHANGING CURRENT TAB TO CO');
+        // console.log('CHANGING CURRENT TAB TO CO');
         break;
       default:
         this.setState({ currentTab: 'schemaBuilderTab' });
@@ -60,7 +60,6 @@ class App extends Component {
     fetch('/search', {
       method: 'POST',
       headers: {
-        // 'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ url: data }),
@@ -78,7 +77,6 @@ class App extends Component {
   handleNewFields() {
     const inputFieldsCopy = this.state.inputFields.slice(0)
     inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} id={`if${inputFieldsCopy.length + 1}`} />)
-    console.log('HANDLE NEW FIELDS ~ INPUT FIELDS COPY -->', inputFieldsCopy)
     this.setState({ inputFields: inputFieldsCopy })
   }
 

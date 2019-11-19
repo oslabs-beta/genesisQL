@@ -33,10 +33,6 @@ class Form extends Component {
   }
 
   render() {
-    console.log('FORM INPUT FIELD IN PROPS -->', this.props.inputFields)
-    console.log('DATA VIEW CONTENT in FORM -->', this.props.dataViewContent)
-    // // console.log("this.state.formDataTypes", this.state.formDataTypes)
-    // console.log('fieldInputOptions', formInputOptions);
     return (
       <div id="formContainer">
         <div className="sbTitle">

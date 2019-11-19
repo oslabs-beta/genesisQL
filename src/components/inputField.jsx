@@ -7,8 +7,6 @@ class InputField extends Component {
   }
 
   render() {
-    console.log('INPUTM FIELD ID', this.props.id);
-
     const formDataTypes = {};
     const { dataViewContent } = this.props;
     for (const key in dataViewContent) {
@@ -29,7 +27,6 @@ class InputField extends Component {
       }
       formDataTypes[key] = type;
     }
-    // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
 
     const formDataTypesKeys = Object.keys(formDataTypes);
     const graphQLTypes = ['String', 'Int', 'Boolean', 'Custom Type'];

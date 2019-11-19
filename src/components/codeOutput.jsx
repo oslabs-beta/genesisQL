@@ -14,7 +14,6 @@ import React, { Component } from 'react';
 
 class CodeOutput extends Component {
   render() {
-    // console.log(this.props.codeGeneratedString)
     return (
       <div className="display">
         <div id="codeOutput">

@@ -43,12 +43,6 @@ class MainContainer extends Component {
     document.querySelectorAll('.fieldTypes').forEach(
       (el) => fieldTypes.push(el.value),
     );
-    // const objectType = document.getElementsByClassName('objectType');
-    // const fieldName = document.getElementsByClassName('fieldName');
-    // const fieldType = document.getElementsByClassName('fieldType');
-    // console.log(objectType);
-    // console.log(fieldNames);
-    // console.log(fieldTypes);
 
     // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
     const codeGenPayload = {
