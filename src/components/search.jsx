@@ -45,7 +45,6 @@ class Search extends Component {
           <Button
             id="searchButton"
             variant="contained"
-            color="secondary"
             size="small"
             onClick={() => {
               this.props.dataPOSTRequest(document.getElementById('searchInput').value);
