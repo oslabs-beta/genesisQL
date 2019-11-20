@@ -222,3 +222,13 @@
     margin: 20px;
     margin-top: 0;
   }
+
+  #productionContainer {
+    overflow: auto;
+  }
+
+  .display {
+    /* max-width: 100px;
+    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; */
+    margin:10px
+  }
