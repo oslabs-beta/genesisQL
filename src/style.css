@@ -185,7 +185,7 @@
     font-size: medium;
   }
 
-  #formSwitch {
+  .formSwitch {
     color: grey;
     margin-bottom: 10px;
     margin-left: 20px;
