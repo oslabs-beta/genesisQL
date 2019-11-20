@@ -29,13 +29,15 @@ class App extends Component {
       currentTab: 'schemaBuilderTab',
       loading: false,
       inputFields: [],
-      formSwitches: [false]
+      formSwitches: [false],
+      codeGeneratedString: '',
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
     this.changeCurrentTab = this.changeCurrentTab.bind(this);
     this.handleNewFields = this.handleNewFields.bind(this);
     this.handleSwitchChange = this.handleSwitchChange.bind(this);
+    this.handleFormSubmitButton = this.handleFormSubmitButton.bind(this);
   }
 
   changeCurrentTab(event, value) {
@@ -95,6 +97,52 @@ class App extends Component {
     this.setState({ formSwitches: formSwitchesCopy })
   }
 
+  handleFormSubmitButton() {
+    const objectType = document.querySelector('.objectType').value;
+
+    const fieldNames = [];
+    document.querySelectorAll('.fieldNames').forEach(
+      (el) => fieldNames.push(el.value),
+    );
+    const fieldTypes = [];
+    document.querySelectorAll('.fieldTypes').forEach(
+      (el, index) => {
+        // console.log('ELEMENT IN FIELD TYPE LOOP -->', el.value, index)
+        if (this.state.formSwitches[index] === true) fieldTypes.push(el.value + '!')
+        else fieldTypes.push(el.value)
+      },
+    );
+
+    // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
+    const codeGenPayload = {
+      objectTypes: [
+        {
+          objTypeName: objectType,
+          fieldNames,
+          fieldTypes,
+        },
+      ],
+    };
+    // console.log('codeGenPayload:', codeGenPayload);
+
+    // SEND FETCH REQUEST TO CODE-GEN ENDPOINT, WITH PAYLOAD
+    fetch('/code', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(codeGenPayload),
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        // console.log('data', data);
+        // SETTING STATE
+        this.setState({ codeGeneratedString: data, currentTab: 'codeOutputTab' });
+        // console.log('state is:', this.state);
+      });
+  }
+
   render() {
     console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches)
     return (
@@ -111,6 +159,8 @@ class App extends Component {
           handleSwitchChange={this.handleSwitchChange}
           inputFields={this.state.inputFields}
           formSwitches={this.state.formSwitches}
+          handleFormSubmitButton={this.handleFormSubmitButton}
+          codeGeneratedString={this.state.codeGeneratedString}
         />
       </div>
     );
