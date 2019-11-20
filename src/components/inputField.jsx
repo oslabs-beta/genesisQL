@@ -4,16 +4,10 @@ import Switch from '@material-ui/core/Switch';
 class InputField extends Component {
   constructor(props) {
     super(props);
-    this.handleSwitchChange = this.handleSwitchChange.bind(this);
-  }
-
-  handleSwitchChange(event, value) {
-    console.log('EVENT IN SWITCH CHANGE', event.target);
-    console.log('VALUE IN SWITCH CHANGE', value)
   }
 
   render() {
-    console.log('KEY FROM INPUT FIELD COMPONENT -->', this.props.fieldIndex)
+    console.log('FIELD INDEX FROM INPUT FIELD COMPONENT -->', this.props.fieldIndex)
     const formDataTypes = {};
     const { dataViewContent } = this.props;
     for (const key in dataViewContent) {
@@ -67,7 +61,7 @@ class InputField extends Component {
             type="checkbox"
             name={`formSwitch-${this.props.fieldIndex}`}
             // checked={this.state.nullable}
-            onChange={this.handleSwitchChange}
+            onChange={this.props.handleSwitchChange}
             value="required"
             inputProps={{ 'aria-label': 'secondary checkbox' }}
           />

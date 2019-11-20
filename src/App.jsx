@@ -28,12 +28,14 @@ class App extends Component {
       dataViewContent: '',
       currentTab: 'schemaBuilderTab',
       loading: false,
-      inputFields: []
+      inputFields: [],
+      formSwitches: [false]
     };
     // binding methods to constructor
     this.dataPOSTRequest = this.dataPOSTRequest.bind(this);
     this.changeCurrentTab = this.changeCurrentTab.bind(this);
     this.handleNewFields = this.handleNewFields.bind(this);
+    this.handleSwitchChange = this.handleSwitchChange.bind(this);
   }
 
   changeCurrentTab(event, value) {
@@ -75,12 +77,26 @@ class App extends Component {
   }
 
   handleNewFields() {
+    const newFieldIndex = this.state.inputFields.length + 1
+
     const inputFieldsCopy = this.state.inputFields.slice(0)
-    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} fieldIndex={this.state.inputFields.length + 1} />)
-    this.setState({ inputFields: inputFieldsCopy })
+    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} fieldIndex={newFieldIndex} handleSwitchChange={this.handleSwitchChange} />)
+
+    const formSwitchesCopy = this.state.formSwitches.slice(0)
+    formSwitchesCopy.push(false);
+
+    this.setState({ inputFields: inputFieldsCopy, formSwitches: formSwitchesCopy })
+  }
+
+  handleSwitchChange(event, value) {
+    const switchIndex = Number(event.target.name.split('-')[1])
+    const formSwitchesCopy = this.state.formSwitches.slice(0)
+    formSwitchesCopy[switchIndex] = value;
+    this.setState({ formSwitches: formSwitchesCopy })
   }
 
   render() {
+    console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches)
     return (
       <div className="App">
         {/* <Icon>star</Icon> */}
@@ -92,7 +108,9 @@ class App extends Component {
           currentTab={this.state.currentTab}
           loading={this.state.loading}
           handleNewFields={this.handleNewFields}
+          handleSwitchChange={this.handleSwitchChange}
           inputFields={this.state.inputFields}
+          formSwitches={this.state.formSwitches}
         />
       </div>
     );

@@ -89,6 +89,7 @@ class MainContainer extends Component {
           handleFormSubmitButton={this.handleFormSubmitButton}
           loading={this.props.loading}
           handleNewFields={this.props.handleNewFields}
+          handleSwitchChange={this.props.handleSwitchChange}
           inputFields={this.props.inputFields}
         />
       </div>

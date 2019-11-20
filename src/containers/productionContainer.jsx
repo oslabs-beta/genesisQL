@@ -30,6 +30,7 @@ class ProductionContainer extends Component {
             handleFormSubmitButton={this.props.handleFormSubmitButton}
             loading={this.props.loading}
             handleNewFields={this.props.handleNewFields}
+            handleSwitchChange={this.props.handleSwitchChange}
             inputFields={this.props.inputFields}
           />
         );
@@ -46,6 +47,7 @@ class ProductionContainer extends Component {
             handleFormSubmitButton={this.props.handleFormSubmitButton}
             loading={this.props.loading}
             handleNewFields={this.props.handleNewFields}
+            handleSwitchChange={this.props.handleSwitchChange}
             inputFields={this.props.inputFields}
           />
         );

@@ -43,7 +43,11 @@ class Form extends Component {
             <label>
               <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
             </label>
-            <InputField dataViewContent={this.props.dataViewContent} fieldIndex={0} />
+            <InputField
+              fieldIndex={0}
+              dataViewContent={this.props.dataViewContent}
+              handleSwitchChange={this.props.handleSwitchChange}
+            />
             {this.props.inputFields}
             <div>
               <Fab
