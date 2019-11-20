@@ -10,6 +10,8 @@
  */
 
 import React, { Component } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Fab from '@material-ui/core/Fab'
 
@@ -22,18 +24,16 @@ class CodeOutput extends Component {
           <pre id="finalOut">{this.props.codeGeneratedString}</pre>
         </div>
         <div id="copyOutputContainer">
-          <Fab
-            id="copyCodeOutput"
-            size="large"
-            color="primary"
-            aria-label="fileCopyIcon"
-            onClick={() => {
-              document.querySelector('#finalOut').select()
-              document.execCommand('copy')
-            }}
-          >
-            <FileCopyIcon />
-          </Fab>
+          <CopyToClipboard text={this.props.codeGeneratedString}>
+            <Fab
+              id="copyCodeOutput"
+              size="large"
+              color="primary"
+              aria-label="fileCopyIcon"
+            >
+              <FileCopyIcon />
+            </Fab>
+          </CopyToClipboard>
         </div>
       </div>
     );
