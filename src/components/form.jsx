@@ -35,10 +35,10 @@ class Form extends Component {
   render() {
     return (
       <div id="formContainer">
-        <div className="sbTitle" id="fieldEditorTitle">
-          <p>Field Editor</p>
-        </div>
         <div id="form">
+          <div className="sbTitle" id="fieldEditorTitle">
+            <p>Field Editor</p>
+          </div>
           <div id="inputContainer">
             <label>
               <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
@@ -61,11 +61,11 @@ class Form extends Component {
               </Fab>
             </div>
           </div>
-          <div id="submitContainer">
-            <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
-              Submit
+        </div>
+        <div id="submitContainer">
+          <Button variant="contained" color="secondary" id="formSubmit" type="submit" size="large" value="Submit" onClick={this.props.handleFormSubmitButton}>
+            Submit
             </Button>
-          </div>
         </div>
       </div>
     );

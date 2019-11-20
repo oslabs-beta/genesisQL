@@ -135,8 +135,9 @@
   #formContainer {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 50%;
-    max-height: 590px;
+    max-height: 745px;
     background-color: #F8F8F8;
   }
   #form {
@@ -213,4 +214,11 @@
     height: auto;
     width: auto;
     margin-left: 20px;
+  }
+
+  #submitContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    margin-top: 0;
   }
