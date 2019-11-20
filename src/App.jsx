@@ -20,6 +20,7 @@ import Search from './components/search';
 import MainContainer from './containers/mainContainer';
 import InputField from './components/inputField';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -79,22 +80,22 @@ class App extends Component {
   }
 
   handleNewFields() {
-    const newFieldIndex = this.state.inputFields.length + 1
+    const newFieldIndex = this.state.inputFields.length + 1;
 
-    const inputFieldsCopy = this.state.inputFields.slice(0)
-    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} fieldIndex={newFieldIndex} handleSwitchChange={this.handleSwitchChange} />)
+    const inputFieldsCopy = this.state.inputFields.slice(0);
+    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} fieldIndex={newFieldIndex} handleSwitchChange={this.handleSwitchChange} />);
 
-    const formSwitchesCopy = this.state.formSwitches.slice(0)
+    const formSwitchesCopy = this.state.formSwitches.slice(0);
     formSwitchesCopy.push(false);
 
-    this.setState({ inputFields: inputFieldsCopy, formSwitches: formSwitchesCopy })
+    this.setState({ inputFields: inputFieldsCopy, formSwitches: formSwitchesCopy });
   }
 
   handleSwitchChange(event, value) {
-    const switchIndex = Number(event.target.name.split('-')[1])
-    const formSwitchesCopy = this.state.formSwitches.slice(0)
+    const switchIndex = Number(event.target.name.split('-')[1]);
+    const formSwitchesCopy = this.state.formSwitches.slice(0);
     formSwitchesCopy[switchIndex] = value;
-    this.setState({ formSwitches: formSwitchesCopy })
+    this.setState({ formSwitches: formSwitchesCopy });
   }
 
   handleFormSubmitButton() {
@@ -108,8 +109,8 @@ class App extends Component {
     document.querySelectorAll('.fieldTypes').forEach(
       (el, index) => {
         // console.log('ELEMENT IN FIELD TYPE LOOP -->', el.value, index)
-        if (this.state.formSwitches[index] === true) fieldTypes.push(el.value + '!')
-        else fieldTypes.push(el.value)
+        if (this.state.formSwitches[index] === true) fieldTypes.push(`${el.value }!`);
+        else fieldTypes.push(el.value);
       },
     );
 
@@ -144,7 +145,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches)
+    console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches);
     return (
       <div className="App">
         {/* <Icon>star</Icon> */}
