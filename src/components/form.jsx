@@ -35,7 +35,7 @@ class Form extends Component {
   render() {
     return (
       <div id="formContainer">
-        <div className="sbTitle">
+        <div className="sbTitle" id="fieldEditorTitle">
           <p>Field Editor</p>
         </div>
         <div id="form">
@@ -43,7 +43,7 @@ class Form extends Component {
             <label>
               <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
             </label>
-            <InputField dataViewContent={this.props.dataViewContent} id="if0" />
+            <InputField dataViewContent={this.props.dataViewContent} fieldIndex={0} />
             {this.props.inputFields}
             <div>
               <Fab

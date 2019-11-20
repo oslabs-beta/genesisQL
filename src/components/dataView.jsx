@@ -22,7 +22,7 @@ class DataView extends Component {
     // console.log('DISPLAY CONTENT', this.props.displayContent);
     return (
       <div id="dataViewContainer">
-        <div className="sbTitle">
+        <div className="sbTitle" id="dataViewTitle">
           <p>Data View</p>
         </div>
         <div id="dataView">

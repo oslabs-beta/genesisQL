@@ -67,16 +67,14 @@
     display: flex;
     flex-direction: column;
     box-shadow: 5px 10px 15px lightslategrey;
-    /* border: 1px solid black; */
-    width: 95%;
-    max-width: 1200px;
-    height: 70%;
+    width: 1300px;
+    max-width: 1300px;
+    height: 800px;
   }
   #navBar {
     display: flex;
     flex-direction: row;
     height: 7%;
-    /* border: 1px solid black; */
   }
   #tabsContainer {
     height: -webkit-fill-available;
@@ -90,6 +88,9 @@
   .MuiTab-wrapper {
     color: whitesmoke;
     font-size: 20;
+  }
+  .MuiTab-root {
+    padding: 16px 12px;
   }
   .tab {
     height: -webkit-fill-available;
@@ -120,7 +121,7 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    max-height: 590px;
+    max-height: 775px;
     border-right: 1px solid gray;
     background-color: #F8F8F8;
   }
@@ -168,6 +169,9 @@
     color: grey;
     font-size: 30px;
     font-weight: 500;
+  }
+  #dataViewTitle {
+    border-right: 1px solid gray;
   }
   #inputContainer {
     padding: 10px;
