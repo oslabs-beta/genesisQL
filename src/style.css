@@ -67,9 +67,8 @@
     display: flex;
     flex-direction: column;
     box-shadow: 5px 10px 15px lightslategrey;
-    width: 1300px;
-    max-width: 1300px;
-    height: 800px;
+    width: 65%;
+    height: 70%;
   }
   #navBar {
     display: flex;
@@ -90,7 +89,7 @@
     font-size: 20;
   }
   .MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected {
-    padding: 16px 12px;
+    padding: 0;
   }
   .tab {
     height: -webkit-fill-available;
@@ -102,19 +101,16 @@
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     background-color: #F8F8F8;
-    /* border: 5px solid purple; */
   }
   #schemaBuilderContainer {
     display: flex;
     flex-direction: row;
     width: -webkit-fill-available;
-    /* border: 5px solid orange; */
   }
   #codeOutput {
     display: flex;
     flex-direction: column;
     width: -webkit-fill-available;
-    /* border: 5px solid brown; */
     background-color: #F8F8F8;
   }
   #dataViewContainer {
