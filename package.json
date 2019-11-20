@@ -31,6 +31,7 @@
     "@babel/preset-react": "^7.6.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
     "jshint": "^2.10.3",
     "nodemon": "^1.19.4",
     "style-loader": "^1.0.0",

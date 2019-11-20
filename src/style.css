@@ -1,4 +1,9 @@
-  /* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
+#logo {
+  width: 250px;
+  height: auto;
+}
+
+/* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
   html, body, #root {
     display: flex;
     flex-direction: column;
@@ -236,3 +241,4 @@
     justify-content: flex-end;
     margin: 25px;
   }
+

@@ -148,7 +148,7 @@ class App extends Component {
     console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches);
     return (
       <div className="App">
-        <h1> GenesisQL </h1>
+        <img src={require('../public/genesiswhite.png')} id="logo" />
         <Search dataPOSTRequest={this.dataPOSTRequest} />
         <MainContainer
           dataViewContent={this.state.dataViewContent}
