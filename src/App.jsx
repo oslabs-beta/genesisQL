@@ -76,7 +76,7 @@ class App extends Component {
 
   handleNewFields() {
     const inputFieldsCopy = this.state.inputFields.slice(0)
-    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} fieldIndex={inputFieldsCopy.length} />)
+    inputFieldsCopy.push(<InputField dataViewContent={this.state.dataViewContent} fieldIndex={this.state.inputFields.length + 1} />)
     this.setState({ inputFields: inputFieldsCopy })
   }
 
