@@ -89,7 +89,7 @@
     color: whitesmoke;
     font-size: 20;
   }
-  .MuiTab-root {
+  .MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected {
     padding: 16px 12px;
   }
   .tab {
