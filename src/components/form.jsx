@@ -56,11 +56,11 @@ class Form extends Component {
                 <AddIcon />
               </Fab>
             </div>
-            <div id="submitContainer">
-              <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
-                Submit
+          </div>
+          <div id="submitContainer">
+            <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
+              Submit
             </Button>
-            </div>
           </div>
         </div>
       </div>
