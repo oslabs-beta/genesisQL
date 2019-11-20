@@ -9,7 +9,7 @@ const searchController = {};
 pgClient.query(queryString.createSearchTable, (err, result) => {
   if (err) console.error('FIRST error', err);
   else {
-    console.log('TABLE searches EXISTS');
+    // console.log('TABLE searches EXISTS');
   }
 });
 
