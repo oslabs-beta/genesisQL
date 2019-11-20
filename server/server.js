@@ -33,6 +33,10 @@ app.post('/search', searchController.fetch, /* searchController.post, */(req, re
   res.send(res.locals.fetch);
 });
 
+app.get('/test', (req, res) => {
+  res.send('hit')
+})
+
 // TO GENERATE CODE app.post('/code', )
 app.post('/code', (req, res) => {
   const { objectTypes } = req.body;
