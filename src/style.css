@@ -43,14 +43,12 @@
     height: 30px;
     width: 100%;
     padding-left: 20px;
+    margin-top: -10px;
     margin-bottom: 5px;
     border-radius: 200px;
     box-shadow: 2px 4px 5px lightslategrey;
     border: 1px solid lightslategray;
     background-color: #F8F8F8;
-    /* background-image: url('../public/searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat; */
   }
   #searchInput:focus {
     outline: none;
@@ -69,8 +67,9 @@
   #mainContainer {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.2%;
     box-shadow: 5px 10px 15px lightslategrey;
-    width: 65%;
+    width: 60%;
     height: 70%;
   }
   #navBar {
@@ -171,7 +170,6 @@
     font-weight: 500;
   }
   #dataViewTitle {
-    border-right: 1px solid gray;
   }
   #inputContainer {
     padding: 10px;
