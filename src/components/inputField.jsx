@@ -45,13 +45,13 @@ class InputField extends Component {
       <div className="inputFields">
         <label>
           <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" placeholder="Field Name" />
-          <datalist className="formDataTypesKeys">
+          <datalist id="formDataTypesKeys">
             {formInputOptions}
           </datalist>
         </label>
         <label>
           <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" placeholder="Field Type" />
-          <datalist className="graphQLTypes">
+          <datalist id="graphQLTypes">
             {formTypesOptions}
           </datalist>
         </label>
