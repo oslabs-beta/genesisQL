@@ -219,7 +219,7 @@
   #submitContainer {
     display: flex;
     justify-content: flex-end;
-    margin: 20px;
+    margin: 25px;
     margin-top: 0;
   }
 
@@ -227,8 +227,17 @@
     overflow: auto;
   }
 
-  .display {
-    /* max-width: 100px;
-    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; */
-    margin:10px
+  #display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:10px;
+    width: 100%;
+  }
+
+  #copyOutputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 25px;
   }
