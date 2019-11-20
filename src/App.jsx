@@ -109,7 +109,7 @@ class App extends Component {
     document.querySelectorAll('.fieldTypes').forEach(
       (el, index) => {
         // console.log('ELEMENT IN FIELD TYPE LOOP -->', el.value, index)
-        if (this.state.formSwitches[index] === true) fieldTypes.push(`${el.value }!`);
+        if (this.state.formSwitches[index] === true) fieldTypes.push(`${el.value}!`);
         else fieldTypes.push(el.value);
       },
     );
@@ -148,7 +148,6 @@ class App extends Component {
     console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches);
     return (
       <div className="App">
-        {/* <Icon>star</Icon> */}
         <h1> GenesisQL </h1>
         <Search dataPOSTRequest={this.dataPOSTRequest} />
         <MainContainer
