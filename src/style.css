@@ -225,7 +225,6 @@
 
   #display {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     margin:10px;
     width: 100%;
@@ -237,3 +236,8 @@
     justify-content: flex-end;
     margin: 25px;
   }
+
+.toast {
+  background-color: #ff008e;
+  color: white;
+}

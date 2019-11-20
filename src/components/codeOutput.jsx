@@ -13,8 +13,8 @@ import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-import Fab from '@material-ui/core/Fab'
-
+import Fab from '@material-ui/core/Fab';
+import { ToastsContainer, ToastsStore } from 'react-toasts';
 
 class CodeOutput extends Component {
   render() {
@@ -30,7 +30,9 @@ class CodeOutput extends Component {
               size="large"
               color="primary"
               aria-label="fileCopyIcon"
+              onClick={() => ToastsStore.success('Schema Copied!')}
             >
+              <ToastsContainer store={ToastsStore} lightBackground />
               <FileCopyIcon />
             </Fab>
           </CopyToClipboard>

@@ -57,6 +57,7 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15",
+    "react-toasts": "^3.0.6",
     "typeface-roboto": "0.0.75"
   }
 }
