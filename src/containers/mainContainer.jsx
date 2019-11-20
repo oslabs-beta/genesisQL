@@ -41,7 +41,11 @@ class MainContainer extends Component {
     );
     const fieldTypes = [];
     document.querySelectorAll('.fieldTypes').forEach(
-      (el) => fieldTypes.push(el.value),
+      (el, index) => {
+        // console.log('ELEMENT IN FIELD TYPE LOOP -->', el.value, index)
+        if (this.props.formSwitches[index] === true) fieldTypes.push(el.value + '!')
+        else fieldTypes.push(el.value)
+      },
     );
 
     // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
