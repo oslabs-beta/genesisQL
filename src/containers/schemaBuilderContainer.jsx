@@ -21,8 +21,6 @@ class SchemaBuilderContainer extends Component {
   }
 
   render() {
-    // console.log('DVC IN SB', this.props.dataViewContent)
-
     return (
       <div id="schemaBuilderContainer">
         {/* <p>'Schema Builder Container'</p> */}
@@ -33,6 +31,9 @@ class SchemaBuilderContainer extends Component {
         <Form
           handleFormSubmitButton={this.props.handleFormSubmitButton}
           dataViewContent={this.props.dataViewContent}
+          handleNewFields={this.props.handleNewFields}
+          handleSwitchChange={this.props.handleSwitchChange}
+          inputFields={this.props.inputFields}
         />
       </div>
     );

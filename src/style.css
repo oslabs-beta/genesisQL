@@ -37,36 +37,60 @@
     margin-bottom: 10px;
   }
   #searchInput {
+    height: 30px;
     width: 100%;
     padding-left: 20px;
+    margin-bottom: 5px;
     border-radius: 200px;
     box-shadow: 2px 4px 5px lightslategrey;
+    border: 1px solid lightslategray;
+    background-color: #F8F8F8;
+    /* background-image: url('../public/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat; */
+  }
+  #searchInput:focus {
+    outline: none;
+    border: 1px solid #bb0d6c;
   }
   #searchButtonContainer {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 7px;
   }
   #searchButton {
+    width: 145px;
     box-shadow: 2px 4px 5px lightslategrey;
   }
   #mainContainer {
     display: flex;
     flex-direction: column;
     box-shadow: 5px 10px 15px lightslategrey;
-    /* border: 1px solid black; */
-    width: 95%;
-    max-width: 1200px;
-    height: 70%;
+    width: 1300px;
+    max-width: 1300px;
+    height: 800px;
   }
   #navBar {
     display: flex;
     flex-direction: row;
     height: 7%;
-    /* border: 1px solid black; */
   }
   #tabsContainer {
     height: -webkit-fill-available;
     width: -webkit-fill-available;
+    background-color: #124e96;
+  }
+  
+  .MuiButtonBase-root:focus {
+    /* background: #0f407c; */
+  }
+  .MuiTab-wrapper {
+    color: whitesmoke;
+    font-size: 20;
+  }
+  .MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected {
+    padding: 16px 12px;
   }
   .tab {
     height: -webkit-fill-available;
@@ -97,8 +121,8 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    max-height: 590px;
-    border-right: 1px solid black;
+    max-height: 775px;
+    border-right: 1px solid gray;
     background-color: #F8F8F8;
   }
   #dataView {
@@ -106,13 +130,14 @@
   }
   #loadSpinner {
     margin-top: 30%;
-    margin-left: 40%;
+    margin-left: 43%;
   }
   #formContainer {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 50%;
-    max-height: 590px;
+    max-height: 745px;
     background-color: #F8F8F8;
   }
   #form {
@@ -137,13 +162,17 @@
   .sbTitle {
     margin: 0px;
     margin-bottom: 16px;
-    border-bottom: 1px solid black;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
     padding: 8px;
     text-align: center;
-    background-color: #daeaf6;
+    background-color: #cce4f7;
     color: grey;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 500;
+  }
+  #dataViewTitle {
+    border-right: 1px solid gray;
   }
   #inputContainer {
     padding: 10px;
@@ -152,9 +181,15 @@
     border: none;
     border-bottom: 1px solid;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
     background-color: #F8F8F8;
     font-size: medium;
+  }
+
+  .formSwitch {
+    color: grey;
+    margin-bottom: 10px;
+    margin-left: 20px;
   }
 
   .fieldTypes:focus, .fieldNames:focus, .objectType:focus {
@@ -171,16 +206,29 @@
     margin-bottom: 15px;
     color: #ff008e
   }
-  #formSwitch {
-    color: grey;
-    padding-top: 10px
-  }
   #addNewField {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
   }
   #formSubmit {
     height: auto;
     width: auto;
-    margin-left: 10px;
+    margin-left: 20px;
+  }
+
+  #submitContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    margin-top: 0;
+  }
+
+  #productionContainer {
+    overflow: auto;
+  }
+
+  .display {
+    /* max-width: 100px;
+    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; */
+    margin:10px
   }

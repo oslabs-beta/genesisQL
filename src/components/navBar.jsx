@@ -10,7 +10,8 @@
  */
 
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 class NavBar extends Component {
   constructor(props) {
@@ -18,18 +19,18 @@ class NavBar extends Component {
   }
 
   render() {
-    const schemaBuilderTab = 'schemaBuilderTab';
-    const codeOutputTab = 'codeOutputTab';
-    // console.log(this.props.changeCurrentTab)
     return (
       <div id="navBar">
         <div id="tabsContainer">
-          <Button variant="contained" color="primary" id={schemaBuilderTab} className="tab" onClick={() => this.props.changeCurrentTab('schemaBuilderTab') }>
-            Schema Builder
-          </Button>
-          <Button variant="contained" color="primary" id={codeOutputTab} className="tab" onClick={() => this.props.changeCurrentTab('codeOutputTab') }>
-            Code Output
-          </Button>
+          <Tabs
+            value={this.props.currentTab}
+            onChange={this.props.changeCurrentTab}
+            indicatorColor="secondary"
+            textColor="primary"
+          >
+            <Tab label="Schema Builder" value="schemaBuilderTab" id="schemaBuilderTab" />
+            <Tab label="Code Output" value="codeOutputTab" id="codeOutputTab" />
+          </Tabs>
         </div>
       </div>
     );

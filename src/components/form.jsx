@@ -10,12 +10,7 @@
  */
 
 import React, { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Switch from '@material-ui/core/Switch';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import InputField from './inputField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
@@ -23,118 +18,54 @@ import Button from '@material-ui/core/Button';
 class Form extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   formDataTypes: {},
-    //   formInputOptions: [],
-    // };
+    this.state = {
+      // create state array for non-nullable inputs
+      // each element will correspond to a specific switch
+      // default false
+      // onchange will switch it to true
+      //
+      // this array will be taken into the submit funciton and
+      // appen a ! to the end of the corresponding data types in code output
+      //
+      // create new field index and increment with new fields
+    };
+
   }
 
   render() {
-    console.log('dataToForm typeof -->  ', typeof this.props.dataViewContent);
-
-    const formDataTypes = {};
-    const { dataViewContent } = this.props;
-    for (const key in dataViewContent) {
-      let type = '';
-      switch (typeof dataViewContent[key]) {
-        case 'string':
-          type = 'String';
-          break;
-        case 'number':
-          type = 'Int';
-          break;
-        case 'boolean':
-          type = 'Boolean';
-          break;
-        case 'object':
-          type = 'Custom';
-          break;
-      }
-      formDataTypes[key] = type;
-    }
-    // console.log("Object.keys --- formDataTypes -->", Object.keys(formDataTypes))
-
-    const formDataTypesKeys = Object.keys(formDataTypes);
-    const graphQLTypes = ['String', 'Int', 'Boolean', 'Custom Type'];
-
-    const formInputOptions = [];
-    for (let i = 0; i < formDataTypesKeys.length; i++) {
-      formInputOptions.push(<option key={i} value={formDataTypesKeys[i]} />);
-    }
-    const formTypesOptions = [];
-    for (let i = 0; i < graphQLTypes.length; i++) {
-      formTypesOptions.push(<option key={i} value={graphQLTypes[i]} />);
-    }
-
-    // console.log("this.state.formDataTypes", this.state.formDataTypes)
-    console.log('fieldInputOptions', formInputOptions);
     return (
       <div id="formContainer">
-        <div className="sbTitle">
-          <p>Field Editor</p>
-        </div>
         <div id="form">
+          <div className="sbTitle" id="fieldEditorTitle">
+            <p>Field Editor</p>
+          </div>
           <div id="inputContainer">
-            {/* https://reactjs.org/docs/forms.html */}
             <label>
               <input className="objectType" type="text" name="objectType" placeholder="Object Type" />
             </label>
-            <div className="inputFields">
-              <label>
-                <input className="fieldNames" type="text" name="fieldName" list="formDataTypesKeys" placeholder="Field Name" />
-                <datalist id="formDataTypesKeys">
-                  {formInputOptions}
-                </datalist>
-              </label>
-              <label>
-                <input className="fieldTypes" type="text" name="fieldType" list="graphQLTypes" placeholder="Field Type" />
-                <datalist id="graphQLTypes">
-                  {formTypesOptions}
-                </datalist>
-              </label>
-              <label id="formSwitch">
-                  Non-nullable:
-                <Switch
-                  type="checkbox"
-                  name="nonNullable"
-                    // checked={this.state.nullable}
-                    // onChange={this.handleSwitchChange('nonNullable')}
-                  value="nonNullable"
-                  inputProps={{ 'aria-label': 'secondary checkbox' }}
-                />
-              </label>
+            <InputField
+              fieldIndex={0}
+              dataViewContent={this.props.dataViewContent}
+              handleSwitchChange={this.props.handleSwitchChange}
+            />
+            {this.props.inputFields}
+            <div>
+              <Fab
+                id="addNewField"
+                size="small"
+                color="secondary"
+                aria-label="add"
+                onClick={this.props.handleNewFields}
+              >
+                <AddIcon />
+              </Fab>
             </div>
           </div>
-          <div>
-            <Fab
-              id="addNewField"
-              size="small"
-              color="secondary"
-              aria-label="add"
-              onClick={
-              () => {
-                // adds new field input options
-                const inputContainer = document.querySelector('#inputContainer');
-                const inputFields = document.querySelector('.inputFields');
-                console.log(inputFields);
-                const clonedInputFields = inputFields.cloneNode(true);
-
-                // remove pre-existing text that was entered from our cloned inputs, before we append them
-                clonedInputFields.querySelector('.fieldNames').value = '';
-                clonedInputFields.querySelector('.fieldTypes').value = '';
-
-                inputContainer.appendChild(clonedInputFields);
-              }
-            }
-            >
-              <AddIcon />
-            </Fab>
-          </div>
-          <div id="submitContainer">
-            <Button variant="contained" color="secondary" id="formSubmit" type="submit" value="Submit" onClick={this.props.handleFormSubmitButton}>
-              Submit
+        </div>
+        <div id="submitContainer">
+          <Button variant="contained" color="secondary" id="formSubmit" type="submit" size="large" value="Submit" onClick={this.props.handleFormSubmitButton}>
+            Submit
             </Button>
-          </div>
         </div>
       </div>
     );

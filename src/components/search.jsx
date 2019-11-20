@@ -10,6 +10,7 @@
  */
 
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
 class Search extends Component {
   constructor(props) {
@@ -21,10 +22,6 @@ class Search extends Component {
       <div id="searchContainer">
         <form
           id="search"
-        //   action="javascript:() => {
-        //   console.log('INSIDE SEARCH ONCLICK FUNC');
-        //   this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-        // }"
         >
           <label>
             <input
@@ -32,33 +29,25 @@ class Search extends Component {
               type="text"
               placeholder="Enter data-source here"
               onSubmit={() => {
-                { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
                 this.props.dataPOSTRequest(document.getElementById('searchInput').value);
               }}
             />
           </label>
-          {/* <button
-          id="searchButton"
-          onClick={() => {
-            console.log('INSIDE SEARCH ONCLICK FUNC');
-            this.props.dataPOSTRequest(document.getElementById('searchInput').value);
-          }}
-          type="submit"
-        >
-          Search
-        </button> */}
         </form>
         <div id="searchButtonContainer">
-          <button
+          {/* <Button className={classes.button}> */}
+
+          <Button
             id="searchButton"
+            variant="contained"
+            size="small"
             onClick={() => {
-              { /* console.log('INSIDE SEARCH ONCLICK FUNC'); */ }
               this.props.dataPOSTRequest(document.getElementById('searchInput').value);
             }}
             type="submit"
           >
-          Search
-          </button>
+            Search
+          </Button>
         </div>
       </div>
     );

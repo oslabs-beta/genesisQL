@@ -19,70 +19,15 @@ import ProductionContainer from './productionContainer';
 class MainContainer extends Component {
   constructor(props) {
     super(props);
-
-    // methods being passed down
-    this.handleFormSubmitButton = this.handleFormSubmitButton.bind(this);
-
-    this.state = {
-      codeGeneratedString: '',
-    };
   }
 
   // changes the current tab state to swich displays from SchemaBuilderContainer to CodeOutput
 
 
   // when user clicks submit button in 'Form', sends data to back-end
-  handleFormSubmitButton() {
-    const objectType = document.querySelector('.objectType').value;
 
-    const fieldNames = [];
-    document.querySelectorAll('.fieldNames').forEach(
-      (el) => fieldNames.push(el.value),
-    );
-    const fieldTypes = [];
-    document.querySelectorAll('.fieldTypes').forEach(
-      (el) => fieldTypes.push(el.value),
-    );
-    // const objectType = document.getElementsByClassName('objectType');
-    // const fieldName = document.getElementsByClassName('fieldName');
-    // const fieldType = document.getElementsByClassName('fieldType');
-    // console.log(objectType);
-    // console.log(fieldNames);
-    // console.log(fieldTypes);
-
-    // CREATE PAYLOAD OBJECT TO SEND TO CODE-GENERATOR SERVER-SIDE
-    const codeGenPayload = {
-      objectTypes: [
-        {
-          objTypeName: objectType,
-          fieldNames,
-          fieldTypes,
-        },
-      ],
-    };
-    // console.log('codeGenPayload:', codeGenPayload);
-
-    // SEND FETCH REQUEST TO CODE-GEN ENDPOINT, WITH PAYLOAD
-    fetch('/code', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(codeGenPayload),
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        // console.log('data', data);
-        // SETTING STATE
-        this.setState({ codeGeneratedString: data });
-        // console.log('state is:', this.state);
-      });
-  }
 
   render() {
-    console.log('DVC IN MC', this.props.dataViewContent);
-    // console.log('code gen', this.state.codeGeneratedString)
     return (
       <div id="mainContainer">
         {/* <p>'MainContainer Component'</p> */}
@@ -92,10 +37,13 @@ class MainContainer extends Component {
         />
         <ProductionContainer
           currentTab={this.props.currentTab}
-          codeGeneratedString={this.state.codeGeneratedString}
+          codeGeneratedString={this.props.codeGeneratedString}
           dataViewContent={this.props.dataViewContent}
-          handleFormSubmitButton={this.handleFormSubmitButton}
+          handleFormSubmitButton={this.props.handleFormSubmitButton}
           loading={this.props.loading}
+          handleNewFields={this.props.handleNewFields}
+          handleSwitchChange={this.props.handleSwitchChange}
+          inputFields={this.props.inputFields}
         />
       </div>
     );
