@@ -15,8 +15,8 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 - Generate graphQL schemas, types, and queries, through an inuitive graphical user interface (GUI)
 - Specify which fields you'd like to use in your schema, and whether they are required or not
 - View data retreived from API urls with a single search
-- Copy generated schema code with a simple button click
-- Outputted code includes ability to set up and run a functional apollo-server, and access graphQL playground
+- Copy generated schema code to clipboard with a single button click
+- Outputted code includes ability to set up and run a functional apollo-server, and access the graphQL playground
 
 # Usage
 1) Visit our website: [genesisQL Beta](http://www.genesisql.com/)
