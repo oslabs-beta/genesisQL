@@ -21,7 +21,7 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 # Usage
 1) Visit our website: [genesisQL Beta](http://www.genesisql.com/)
 2) Enter an endpoint to retrieve your data from (e.g. https://swapi.co/api/people/2/)
-3) Enter a name for your object type, and select input field names & types from the dropdown menu. Toggle require on if needed
+3) Enter a name for your object type, and select input field names & types from the dropdown menu. Toggle if needed
 4) Use the '+' button to add more fields as needed
 5) Press submit to generate your schema output
 6) Use the copy button to quickly select the outputted code, and paste it into your project folder as a new file
