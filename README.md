@@ -12,7 +12,7 @@ GenesisQL is **an open-source web-application that enables rapid schema-prototyp
 Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
 ## Features
-- Generate graphQL schemas, types, and queries, through an inuitive user interface \n
-- Specify which fields you'd like to use in your schema, and whether they are required or not \n
-- View data from API url with a simple search \n
-- Copy generated schema code with a simple button click /n
+- Generate graphQL schemas, types, and queries, through an inuitive user interface
+- Specify which fields you'd like to use in your schema, and whether they are required or not
+- View data from API url with a simple search
+- Copy generated schema code with a simple button click
