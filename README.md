@@ -1,4 +1,4 @@
-![genesisQL Logo](https://github.com/oslabs-beta/genesisQL/blob/dev/public/genesis.png?raw=true)
+![genesisQL Logo](https://github.com/oslabs-beta/genesisQL/blob/dev/public/genesisCrop.png?raw=true)
 
 GenesisQL
 GenesisQL is XYZ.
