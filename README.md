@@ -9,7 +9,7 @@
 # genesisQL
 genesisQL is **an open-source web-application that enables rapid schema-prototyping of GraphQL applications**, making your development process easier & faster. Made for developers, by developers.
 
-Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
+Created by [Adam Goren](https://github.com/adamgoren), [Tom Herrmann](https://github.com/TomHerrmann), [Xose Manolo](https://github.com/xosemanolo), and [Andrew Paisner](https://github.com/apaisner).
 
 ## Features
 - Generate graphQL schemas, types, and queries, through an inuitive graphical user interface (GUI)
@@ -84,12 +84,3 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 ### Step 3
 
 - 🔃 Create a new pull request using <a href="https://github.com/oslabs-beta/genesisQL/compare" target="_blank">`https://github.com/oslabs-beta/genesisQL/compare`</a>.
-
-## Team
-
-> Our People
-
-| <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> | <a href="https://github.com/adamgoren" target="_blank">**Adam Goren**</a> | <a href="https://github.com/xosemanolo" target="_blank">**Xose Manolo**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/47604715?s=400&v=4)](https://github.com/TomHerrmann)    | [![FVCproductions](https://avatars0.githubusercontent.com/u/29680823?s=400&v=4)](https://github.com/adamgoren) | [![FVCproductions](https://avatars3.githubusercontent.com/u/39598002?s=400&v=4)](https://github.com/xosemanolo)  |
-| <a href="https://github.com/TomHerrmann" target="_blank">`https://github.com/TomHerrmann`</a> | <a href="https://github.com/adamgoren" target="_blank">`https://github.com/adamgoren`</a> | <a href="https://github.com/xosemanolo" target="_blank">`https://github.com/xosemanolo`</a> |
