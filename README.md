@@ -1,5 +1,6 @@
 ![genesisQL Logo](https://github.com/oslabs-beta/genesisQL/blob/dev/public/genesisCrop.png?raw=true)
 
+#
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 # GenesisQL
