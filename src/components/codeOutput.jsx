@@ -10,18 +10,36 @@
  */
 
 import React, { Component } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import Fab from '@material-ui/core/Fab';
+
+import { withSnackbar } from 'notistack';
 
 class CodeOutput extends Component {
   render() {
     return (
-      <div className="display">
+      <div id="display">
         <div id="codeOutput">
-          <pre>{this.props.codeGeneratedString}</pre>
+          <pre id="finalOut">{this.props.codeGeneratedString}</pre>
+        </div>
+        <div id="copyOutputContainer">
+          <CopyToClipboard text={this.props.codeGeneratedString}>
+            <Fab
+              id="copyCodeOutput"
+              size="large"
+              color="primary"
+              aria-label="fileCopyIcon"
+              onClick={() => { this.props.enqueueSnackbar('Schema copied!'); }}
+            >
+              <FileCopyIcon />
+            </Fab>
+          </CopyToClipboard>
         </div>
       </div>
     );
   }
 }
 
-export default CodeOutput;
+export default withSnackbar(CodeOutput);

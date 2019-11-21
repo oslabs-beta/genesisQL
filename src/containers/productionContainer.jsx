@@ -37,7 +37,11 @@ class ProductionContainer extends Component {
         // console.log('CHANGING CURRENT TAB TO SCB');
         break;
       case 'codeOutputTab':
-        currentTab = <CodeOutput codeGeneratedString={this.props.codeGeneratedString} />;
+        currentTab = (
+          <CodeOutput
+            codeGeneratedString={this.props.codeGeneratedString}
+          />
+        );
         // console.log('CHANGING CURRENT TAB TO CO');
         break;
       default:
