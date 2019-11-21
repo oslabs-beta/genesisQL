@@ -7,7 +7,8 @@
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 # genesisQL
-GenesisQL is **an open-source web-application that enables rapid schema-prototyping of GraphQL applications**, making your development process easier & faster. Made for developers, by developers.
+**genesisQL is an open-source web-application that enables rapid schema-prototyping of GraphQL applications**.
+We make your development process easier & faster - made for developers, by developers.
 
 Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
