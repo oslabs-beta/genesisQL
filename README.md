@@ -83,4 +83,4 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/oslabs-beta/genesisQL/compare" target="_blank">`https://github.com/oslabs-beta/genesisQL/compare`</a>.
