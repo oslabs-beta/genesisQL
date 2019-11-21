@@ -29,6 +29,7 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 8) Simply run the new file, and the graphQL playground will appear
 
 ## Example Code Output
+```javascript
   const { ApolloServer, gql } = require('apollo-server');
 
   const typeDefs = gql` 
@@ -61,3 +62,4 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
   server.listen({ port }).then(({ url }) => {
     console.log(`🚀  Server listening at ${url}`);
   });
+```
