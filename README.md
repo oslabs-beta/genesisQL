@@ -19,4 +19,11 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 - Outputted code includes ability to set up and run a functional apollo-server, and access graphQL playground
 
 # Usage
-Simply visit our website: [genesisQL Beta](http://www.genesisql.com/)
+1) Visit our website: [genesisQL Beta](http://www.genesisql.com/)
+2) Enter an endpoint to retrieve your data from (e.g. https://swapi.co/api/people/2/)
+3) Enter a name for your object type, and select input field names & types from the dropdown menu. Toggle require on if needed
+4) Use the '+' button to add more fields as needed
+5) Press submit to generate your schema output
+6) Use the copy button to quickly select the outputted code, and paste it into your project folder as a new file
+7) Install apollo server using your tool of choice (e.g. npm i apollo-server --save)
+8) Simply run the new file, and the graphQL playground will appear
