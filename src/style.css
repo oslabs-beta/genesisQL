@@ -1,35 +1,33 @@
+html, body, #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
+}
+p {
+  margin: 10px;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #0d8abc;
+}
 #logo {
   width: 250px;
   height: auto;
 }
-
-/* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
-  html, body, #root {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
-  }
-  p {
-    margin: 10px;
-  }
-  .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: #0d8abc;
-  }
-  #searchContainer {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+#searchContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
     width: 50%;
   }
   #search {
@@ -114,16 +112,21 @@
     flex-direction: column;
     width: -webkit-fill-available;
     background-color: #F8F8F8;
+    overflow: auto;
   }
   #dataViewContainer {
     display: flex;
     flex-direction: column;
     width: 50%;
     max-height: 775px;
-    border-right: 1px solid gray;
     background-color: #F8F8F8;
   }
   #dataView {
+    background-color: whitesmoke;
+    margin: 13px;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    height: 80%;
     overflow: auto;
   }
   #loadSpinner {
@@ -160,16 +163,14 @@
   .sbTitle {
     margin: 0px;
     margin-bottom: 16px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
     padding: 8px;
     text-align: center;
-    background-color: #cce4f7;
     color: grey;
     font-size: 30px;
     font-weight: 500;
   }
   #dataViewTitle {
+    margin-bottom: 0;
   }
   #inputContainer {
     padding: 10px;
@@ -223,7 +224,6 @@
   #productionContainer {
     overflow: auto;
   }
-
   #display {
     display: flex;
     justify-content: space-between;
