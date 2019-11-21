@@ -18,7 +18,7 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 - Copy generated schema code to clipboard with a single button click
 - Outputted code includes ability to set up and run a functional apollo-server, and access the graphQL playground
 
-# Usage
+## Usage
 1) Visit our website: [genesisQL Beta](http://www.genesisql.com/)
 2) Enter an endpoint to retrieve your data from (e.g. https://swapi.co/api/people/2/)
 3) Enter a name for your object type, and select input field names & types from the dropdown menu. Toggle if needed
