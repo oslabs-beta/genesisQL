@@ -6,7 +6,7 @@
 [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-# GenesisQL
+# genesisQL
 GenesisQL is **an open-source web-application that enables rapid schema-prototyping of GraphQL applications**, making your development process easier & faster. Made for developers, by developers.
 
 Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
