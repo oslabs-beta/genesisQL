@@ -11,8 +11,8 @@
 
 Created by [Adam Goren](https://github.com/adamgoren), [Tom Herrmann](https://github.com/TomHerrmann), [Xose Manolo](https://github.com/xosemanolo), and [Andrew Paisner](https://github.com/apaisner).
 
-<!-- <p align="center"><kbd><img src="./public/genQLdemo_FINAL.gif" width="800px"></kbd></p> -->
-<p align="center"><kbd><img src="https://vimeo.com/374757326" width="800px"></kbd></p>
+<!-- reference for markdown code: https://video-to-markdown.netlify.com/ -->
+[![genesisQL](https://i.ibb.co/0Kws3dv/https-i-vimeocdn-com-video-833301780-720.jpg)](https://vimeo.com/374757326 "genesisQL")
 
 ## Features
 - Generate graphQL schemas, types, and queries, through an inuitive graphical user interface (GUI)
