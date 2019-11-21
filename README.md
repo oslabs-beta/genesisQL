@@ -89,7 +89,7 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
 > Our People
 
-| <a href="http://fvcproductions.com" target="_blank">**Tom Herrmann**</a> | <a href="http://fvcproductions.com" target="_blank">**Adam Goren**</a> | <a href="http://fvcproductions.com" target="_blank">**Xose Manolo**</a> |
+| <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> | <a href="https://github.com/adamgoren" target="_blank">**Adam Goren**</a> | <a href="https://github.com/xosemanolo" target="_blank">**Xose Manolo**</a> |
 | :---: |:---:| :---:|
 | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/TomHerrmann)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/adamgoren) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/xosemanolo)  |
 | <a href="https://github.com/TomHerrmann" target="_blank">`https://github.com/TomHerrmann`</a> | <a href="https://github.com/adamgoren" target="_blank">`https://github.com/adamgoren`</a> | <a href="https://github.com/xosemanolo" target="_blank">`https://github.com/xosemanolo`</a> |
