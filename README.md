@@ -84,12 +84,3 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 ### Step 3
 
 - 🔃 Create a new pull request using <a href="https://github.com/oslabs-beta/genesisQL/compare" target="_blank">`https://github.com/oslabs-beta/genesisQL/compare`</a>.
-
-## Team
-
-> Our People
-
-| <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> | <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/47604715?s=400&v=4)](https://github.com/TomHerrmann)    | [![FVCproductions](https://github.com/TomHerrmann)](https://github.com/TomHerrmann) |
-| <a href="https://github.com/TomHerrmann" target="_blank">`https://github.com/TomHerrmann`</a> 
