@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import { SnackbarProvider } from 'notistack';
 import App from './App';
 
 const theme = createMuiTheme({
@@ -16,7 +17,9 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <App />
+    <SnackbarProvider maxSnack={3}>
+      <App />
+    </SnackbarProvider>
   </MuiThemeProvider>,
   document.getElementById('root'),
 );

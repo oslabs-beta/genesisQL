@@ -18,18 +18,6 @@ import Button from '@material-ui/core/Button';
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // create state array for non-nullable inputs
-      // each element will correspond to a specific switch
-      // default false
-      // onchange will switch it to true
-      //
-      // this array will be taken into the submit funciton and
-      // appen a ! to the end of the corresponding data types in code output
-      //
-      // create new field index and increment with new fields
-    };
-
   }
 
   render() {

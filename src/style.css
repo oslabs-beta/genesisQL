@@ -1,32 +1,33 @@
-  /* for reference: https://stackoverflow.com/questions/38428322/react-component-full-screen-with-height-100 */
-  html, body, #root {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
-  }
-  p {
-    margin: 10px;
-  }
-  .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    /* margin: 1%; */
-    /* border: 1px solid black; */
-    background-color: #0d8abc;
-  }
-  #searchContainer {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+html, body, #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; 
+}
+p {
+  margin: 10px;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #0d8abc;
+}
+#logo {
+  width: 250px;
+  height: auto;
+}
+#searchContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
     width: 50%;
   }
   #search {
@@ -40,14 +41,12 @@
     height: 30px;
     width: 100%;
     padding-left: 20px;
+    margin-top: -10px;
     margin-bottom: 5px;
     border-radius: 200px;
     box-shadow: 2px 4px 5px lightslategrey;
     border: 1px solid lightslategray;
     background-color: #F8F8F8;
-    /* background-image: url('../public/searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat; */
   }
   #searchInput:focus {
     outline: none;
@@ -66,10 +65,9 @@
   #mainContainer {
     display: flex;
     flex-direction: column;
-    box-shadow: 5px 10px 15px lightslategrey;
-    width: 1300px;
-    max-width: 1300px;
-    height: 800px;
+    margin-bottom: 1.3%;
+    width: 62%;
+    height: 70%;
   }
   #navBar {
     display: flex;
@@ -77,6 +75,8 @@
     height: 7%;
   }
   #tabsContainer {
+    border-top-right-radius: 22px;
+    border-top-left-radius: 22px;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     background-color: #124e96;
@@ -90,7 +90,7 @@
     font-size: 20;
   }
   .MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected {
-    padding: 16px 12px;
+    padding: 0;
   }
   .tab {
     height: -webkit-fill-available;
@@ -102,30 +102,33 @@
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     background-color: #F8F8F8;
-    /* border: 5px solid purple; */
   }
   #schemaBuilderContainer {
     display: flex;
     flex-direction: row;
     width: -webkit-fill-available;
-    /* border: 5px solid orange; */
   }
   #codeOutput {
     display: flex;
     flex-direction: column;
     width: -webkit-fill-available;
-    /* border: 5px solid brown; */
     background-color: #F8F8F8;
+    overflow: auto;
   }
   #dataViewContainer {
     display: flex;
     flex-direction: column;
     width: 50%;
     max-height: 775px;
-    border-right: 1px solid gray;
     background-color: #F8F8F8;
   }
   #dataView {
+    background-color: whitesmoke;
+    margin: 0 0 20px 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 40px;
+    height: 80%;
     overflow: auto;
   }
   #loadSpinner {
@@ -162,17 +165,14 @@
   .sbTitle {
     margin: 0px;
     margin-bottom: 16px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
     padding: 8px;
     text-align: center;
-    background-color: #cce4f7;
     color: grey;
     font-size: 30px;
     font-weight: 500;
   }
   #dataViewTitle {
-    border-right: 1px solid gray;
+    margin-bottom: 0;
   }
   #inputContainer {
     padding: 10px;
@@ -207,7 +207,7 @@
     color: #ff008e
   }
   #addNewField {
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 20px;
   }
   #formSubmit {
@@ -219,16 +219,27 @@
   #submitContainer {
     display: flex;
     justify-content: flex-end;
-    margin: 20px;
+    margin: 25px;
     margin-top: 0;
   }
 
   #productionContainer {
+    border-bottom-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    box-shadow: 10px 10px 15px lightslategray;
     overflow: auto;
   }
-
-  .display {
-    /* max-width: 100px;
-    font-family: 'roboto', 'Times New Roman', 'Times', 'serif'; */
-    margin:10px
+  #display {
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+    width: 100%;
   }
+
+  #copyOutputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 25px;
+  }
+
