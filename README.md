@@ -91,5 +91,5 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
 | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
 | :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/TomHerrmann)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/adamgoren) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/xosemanolo)  |
 | <a href="https://github.com/TomHerrmann" target="_blank">`https://github.com/TomHerrmann`</a> | <a href="https://github.com/adamgoren" target="_blank">`https://github.com/adamgoren`</a> | <a href="https://github.com/xosemanolo" target="_blank">`https://github.com/xosemanolo`</a> |
