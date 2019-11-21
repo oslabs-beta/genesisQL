@@ -91,5 +91,3 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
 | <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> | <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> | <a href="https://github.com/TomHerrmann" target="_blank">**ex**</a> |
 | :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/47604715?s=400&v=4)](https://github.com/TomHerrmann)    | [![FVCproductions](https://github.com/TomHerrmann)](https://github.com/TomHerrmann) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="https://github.com/TomHerrmann" target="_blank">`https://github.com/TomHerrmann`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
