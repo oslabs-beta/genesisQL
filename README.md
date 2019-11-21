@@ -27,3 +27,37 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 6) Use the copy button to quickly select the outputted code, and paste it into your project folder as a new file
 7) Install apollo server using a package manager of your choice: e.g. 'npm i apollo-server --save'
 8) Simply run the new file, and the graphQL playground will appear
+
+## Example Code Output
+  const { ApolloServer, gql } = require('apollo-server');
+
+  const typeDefs = gql` 
+
+  type starwars_traits {
+    name: String!
+    mass: Int
+    homeworld: String
+  }
+
+  type Query {
+    getAllstarwars_traits: [starwars_traits]
+    getstarwars_traitsById(id: ID!): starwars_traits
+  }
+
+  type Mutation {
+    addstarwars_traits(name: String!, mass: Int, homeworld: String, ): Boolean
+    updatestarwars_traits(name: String!, mass: Int, homeworld: String, ): Boolean
+    deletestarwars_traits(id: ID): Boolean
+  }
+
+  `; 
+
+  const resolvers = {
+  };
+
+  const port = process.env.PORT || 4000; // defaults to port 4000 
+  const server = new ApolloServer({ typeDefs, resolvers });
+
+  server.listen({ port }).then(({ url }) => {
+    console.log(`🚀  Server listening at ${url}`);
+  });
