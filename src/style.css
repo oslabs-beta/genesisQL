@@ -66,7 +66,6 @@ p {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.3%;
-    box-shadow: 5px 10px 15px lightslategrey;
     width: 60%;
     height: 70%;
   }
@@ -76,6 +75,8 @@ p {
     height: 7%;
   }
   #tabsContainer {
+    border-top-right-radius: 22px;
+    border-top-left-radius: 22px;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
     background-color: #124e96;
@@ -124,6 +125,7 @@ p {
   #dataView {
     background-color: whitesmoke;
     margin: 0 0 20px 20px;
+    padding: 10px;
     border: 1px solid gray;
     border-radius: 40px;
     height: 80%;
@@ -222,8 +224,9 @@ p {
   }
 
   #productionContainer {
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    box-shadow: 10px 10px 15px lightslategray;
     overflow: auto;
   }
   #display {
