@@ -19,4 +19,4 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 - Outputted code includes ability to set up and run a functional apollo-server, and access graphQL playground
 
 # Usage
-Simply visit our website: ![genesisQL Beta](http://www.genesisql.com/)
+Simply visit our website: [genesisQL Beta](http://www.genesisql.com/)
