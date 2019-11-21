@@ -14,7 +14,7 @@ Created by [Adam Goren](https://github.com/adamgoren), [Tom Herrmann](https://gi
 <!-- reference for markdown code: https://video-to-markdown.netlify.com/ -->
 <!-- [![genesisQL](https://i.ibb.co/0Kws3dv/https-i-vimeocdn-com-video-833301780-720.jpg){:target="_blank"}](https://vimeo.com/374757326 "genesisQL") -->
 
-<a href="https://vimeo.com/374757326" target="_blank">genesisQL</a>
+<a href="https://vimeo.com/374757326" target="_blank"><img src= "https://github.com/oslabs-beta/genesisQL/blob/adam/add-pic/public/genesisql.PNG"></a>
 
 ## Features
 - Generate graphQL schemas, types, and queries, through an inuitive graphical user interface (GUI)
