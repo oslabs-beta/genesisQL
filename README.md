@@ -91,5 +91,5 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 
 | <a href="https://github.com/TomHerrmann" target="_blank">**Tom Herrmann**</a> | <a href="https://github.com/adamgoren" target="_blank">**Adam Goren**</a> | <a href="https://github.com/xosemanolo" target="_blank">**Xose Manolo**</a> |
 | :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/TomHerrmann)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/adamgoren) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](https://github.com/xosemanolo)  |
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/47604715?s=400&v=4)](https://github.com/TomHerrmann)    | [![FVCproductions](https://avatars0.githubusercontent.com/u/29680823?s=400&v=4)](https://github.com/adamgoren) | [![FVCproductions](https://avatars3.githubusercontent.com/u/39598002?s=400&v=4)](https://github.com/xosemanolo)  |
 | <a href="https://github.com/TomHerrmann" target="_blank">`https://github.com/TomHerrmann`</a> | <a href="https://github.com/adamgoren" target="_blank">`https://github.com/adamgoren`</a> | <a href="https://github.com/xosemanolo" target="_blank">`https://github.com/xosemanolo`</a> |
