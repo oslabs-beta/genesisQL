@@ -25,5 +25,5 @@ Created by Adam Goren, Tom Herrmann, Xose Manolo, and Andrew Paisner.
 4) Use the '+' button to add more fields as needed
 5) Press submit to generate your schema output
 6) Use the copy button to quickly select the outputted code, and paste it into your project folder as a new file
-7) Install apollo server using your tool of choice (e.g. npm i apollo-server --save)
+7) Install apollo server using your tool of choice (npm i apollo-server --save)
 8) Simply run the new file, and the graphQL playground will appear
