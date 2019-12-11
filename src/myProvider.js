@@ -115,3 +115,5 @@ class MyProvider extends Component {
     );
   }
 }
+
+export default MyProvider;

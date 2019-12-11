@@ -147,22 +147,24 @@ class App extends Component {
   render() {
     console.log('FORM SWITHC ARRAY IN APP -->', this.state.formSwitches);
     return (
-      <div className="App">
-        <img src={require('../public/genesiswhite.png')} id="logo" />
-        <Search dataPOSTRequest={this.dataPOSTRequest} />
-        <MainContainer
-          dataViewContent={this.state.dataViewContent}
-          changeCurrentTab={this.changeCurrentTab}
-          currentTab={this.state.currentTab}
-          loading={this.state.loading}
-          handleNewFields={this.handleNewFields}
-          handleSwitchChange={this.handleSwitchChange}
-          inputFields={this.state.inputFields}
-          formSwitches={this.state.formSwitches}
-          handleFormSubmitButton={this.handleFormSubmitButton}
-          codeGeneratedString={this.state.codeGeneratedString}
-        />
-      </div>
+      <myProvider>
+        <div className="App">
+          <img src={require('../public/genesiswhite.png')} id="logo" />
+          <Search dataPOSTRequest={this.dataPOSTRequest} />
+          <MainContainer
+            dataViewContent={this.state.dataViewContent}
+            changeCurrentTab={this.changeCurrentTab}
+            currentTab={this.state.currentTab}
+            loading={this.state.loading}
+            handleNewFields={this.handleNewFields}
+            handleSwitchChange={this.handleSwitchChange}
+            inputFields={this.state.inputFields}
+            formSwitches={this.state.formSwitches}
+            handleFormSubmitButton={this.handleFormSubmitButton}
+            codeGeneratedString={this.state.codeGeneratedString}
+          />
+        </div>
+      </myProvider>
     );
   }
 }
