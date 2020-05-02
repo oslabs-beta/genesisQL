@@ -16,10 +16,10 @@ Created by [Adam Goren](https://github.com/adamgoren), [Tom Herrmann](https://gi
 See the full demo video here: [genesisQL Walkthrough](https://vimeo.com/374757326) 
 
 ## Features
-- Generate graphQL schemas, types, and queries, through an inuitive graphical user interface (GUI)
+- Generate graphQL schemas, types, and queries, through an intuitive graphical user interface (GUI)
 - Easily select which fields you'd like to use in your schema, from an automatically generated dropdown menu
 - Ability to specify whether fields are required or not
-- View data retreived from API urls with a single search, in app
+- View data retrieved from API urls with a single search, in app
 - Copy generated schema code to clipboard with a single button click
 - Outputted code can be used to set-up/run a functional apollo-server, and access the graphQL playground
 
