@@ -49,7 +49,7 @@
     "supertest": "^4.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.6.1",
