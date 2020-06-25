@@ -27,11 +27,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Handles getting data and send it back to clients */
 
-app.post('/search', searchController.fetch, /* searchController.post, */(req, res) => {
-  // console.log('RESPONSE LOCALS FETCHED DATA', res.locals.fetch);
-  // const { fetch } = res.locals
-  res.status(200).send(res.locals.fetch);
-});
+app.post(
+  '/search',
+  searchController.fetch,
+  /* searchController.post, */ (req, res) => {
+    // console.log('RESPONSE LOCALS FETCHED DATA', res.locals.fetch);
+    // const { fetch } = res.locals
+    res.status(200).send(res.locals.fetch);
+  }
+);
 
 // TO GENERATE CODE app.post('/code', )
 app.post('/code', (req, res) => {
@@ -54,6 +58,6 @@ app.use('/', (req, res, next) => {
 });
 
 module.exports = {
-    app,
-    port
+  app,
+  port,
 };
